@@ -1,14 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Glee | Home page</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__wrap">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.png" alt="Site logo">Glee.
+        </a>
+
+        <nav class="menu">
+          <ul class="menu__items">
+            <li class="menu__item">
+              <a class="menu__link" href="#">Home +</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="#">About</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="#">Services</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="#">Pages + </a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="#">News</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link" href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="user-nav">
+          <li class="user-nav__item user-nav__item--search">
+            <a class="user-nav__link user-nav__link--search" href="#"> </a>
+          </li>
+
+          <li class="user-nav__item user-nav__item--cabinet">
+            <a class="user-nav__link user-nav__link--heart" href="#">
+              <span class="user-nav__count user-nav__count--heart"> 0 </span>
+            </a>
+
+            <a class="user-nav__link user-nav__link--shop" href="#">
+              <span class="user-nav__count user-nav__count--shop"> 0 </span>
+            </a>
+          </li>
+
+          <li class="user-nav__item user-nav__item--menu">
+            <a class="user-nav__link user-nav__link--menu" href="#"> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="slider">
+      <div class="wrapper">
+        <div class="slider__inner">
+          <ul class="slider__items">
+            <li class="slider__item">
+              <div class="slider__item-inner">
+                <div class="slider__content">
+                  <h1 class="slider__title">Smart and trendy</h1>
+
+                  <p class="slider__text">
+                    Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  </p>
+                  <button class="slider__btn">Shop Now</button>
+                </div>
+
+                <div class="slider__image">
+                  <img class="slider__img" src="images/slider-img.png" alt="Image sofa">
+                </div>
+              </div>
+            </li>
+
+            <li class="slider__item">
+              <div class="slider__item-inner">
+                <div class="slider__content">
+                  <h1 class="slider__title">Smart and trendy</h1>
+
+                  <p class="slider__text">
+                    Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  </p>
+                  <button class="slider__btn">Shop Now</button>
+                </div>
+
+                <div class="slider__image">
+                  <img class="slider__img" src="images/slider-img.png" alt="Image sofa">
+                </div>
+              </div>
+            </li>
+
+            <li class="slider__item">
+              <div class="slider__item-inner">
+                <div class="slider__content">
+                  <h1 class="slider__title">Smart and trendy</h1>
+
+                  <p class="slider__text">
+                    Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  </p>
+                  <button class="slider__btn">Shop Now</button>
+                </div>
+
+                <div class="slider__image">
+                  <img class="slider__img" src="images/slider-img.png" alt="Image sofa">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="services">
+          <ul class="services__items">
+            <li class="services__item services__item--support">
+              <h2 class="services__title">Support 24/7.</h2>
+              <p>
+                Contact us 24 hours a day,
+                7 days a week.
+              </p>
+            </li>
+
+            <li class="services__item services__item--delivery">
+              <h2 class="services__title">Delivery.</h2>
+              <p>Free shipping on all US order.</p>
+            </li>
+
+            <li class="services__item services__item--payment">
+              <h2 class="services__title">100% Payment secure.</h2>
+              <p>
+                We ensure secure payment
+                with PEV
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="container">
+        <h2 class="products__title"> Products of the week </h2>
+
+        <div class="products__filter">
+          <button class="products__btn">All</button>
+          <button class="products__btn">Furnitures</button>
+          <button class="products__btn">Chairs</button>
+          <button class="products__btn">Lighting</button>
+          <button class="products__btn">Decor</button>
+        </div>
+
+        <ul class="products__items">
+          <li class="products__item">
+            <img class="products__img" src="images/products/wooden-radio.png" alt="Wooden radio">
+            <h3 class="products__subtitle">Wooden radio</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/wooden-chair.png" alt="Wooden chair">
+            <h3 class="products__subtitle">Wooden chair</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/white-chair.png" alt="White chair">
+            <h3 class="products__subtitle">White chair</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/retro-table.png" alt="Retro table">
+            <h3 class="products__subtitle">Retro table</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/wooden-radio-alt.png" alt="Wooden radio">
+            <h3 class="products__subtitle">Wooden radio</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/wooden-chair-alt.png" alt="Wooden chair">
+            <h3 class="products__subtitle">Wooden chair</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/white-chair-alt.png" alt="White chair">
+            <h3 class="products__subtitle">White chair</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="products__item">
+            <img class="products__img" src="images/products/retro-table-alt.png" alt="Retro table">
+            <h3 class="products__subtitle">Retro table</h3>
+            <span class="products__cost">$29.00</span>
+
+            <div class="products__overlay">
+              <ul class="products__lists">
+                <li class="products__list">
+                  <svg class="products__search">
+                    <use xlink:href="images/products/sprite.svg#search__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__shop">
+                    <use xlink:href="images/products/sprite.svg#shop__icon"></use>
+                  </svg>
+                </li>
+
+                <li class="products__list">
+                  <svg class="products__heart">
+                    <use xlink:href="images/products/sprite.svg#heart__icon"></use>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__item footer__item--contact">
+          <a class="logo footer__logo" href="#">
+            <img class="logo__img" src="images/logo.png" alt="Site logo">Glee.
+          </a>
+
+          <a class="footer__address"
+            href="https://www.google.ru/maps/search/4772+Wines+Lane+Houston,+TX+77032/@29.9546474,-95.3725089,13z/data=!3m1!4b1"
+            target="_blank">
+            ADDRESS: 4772 Wines Lane
+            Houston, TX 77032
+          </a>
+          <a class="footer__phone" href="tel:+8323475843">Telephone: +832-347-5843</a>
+          <a class="footer__mail" href="mailto:contact@Glee.com">EMAIL: contact@Glee.com</a>
+        </div>
+        <div class="footer__item footer__item--services">
+          <h2 class="footer__title">services</h2>
+
+          <ul class="footer__lists">
+            <li class="footer__list">
+              <a class="footer__link" href="#">About us</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#"> Return Policy</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#">Our Blog</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#"> Contact Us</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#">Terms & Condition</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__item footer__item--account">
+          <h2 class="footer__title">account</h2>
+
+          <ul class="footer__lists">
+            <li class="footer__list">
+              <a class="footer__link" href="#">Your Account</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#">Checkout</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#">Login</a>
+            </li>
+            <li class="footer__list">
+              <a class="footer__link" href="#">Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__item">
+          <h2 class="footer__title">newsletter</h2>
+
+          <p class="footer__text">
+            Subscribe by our newsletter and get
+            update protidin.
+          </p>
+
+          <form class="footer__form" action="#">
+            <input class="footer__input" type="email" placeholder="Email address" required>
+            <button class="footer__btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          ©2020 CopyRight Example. All rights reserved.
+        </p>
+
+        <ul class="footer-menu__items">
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="#">Home</a>
+          </li>
+
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="#">About</a>
+          </li>
+
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="#">Blog</a>
+          </li>
+
+          <li class="footer-menu__item">
+            <a class="footer-menu__link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.min.js"></script>
 </body>
+
 </html>
