@@ -6,4 +6,6 @@ $(function () {
     autoplay: true,
     autoplaySpeed: 5000,
   })
+
+  mixitup('.products__items')
 })

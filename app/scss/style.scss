@@ -373,6 +373,11 @@
     border: transparent;
     color: #8b8b8b;
     background-color: transparent;
+
+    &:hover{
+      color: #1a1a1a;
+      cursor: pointer;
+    }
   }
 
   &__items {
