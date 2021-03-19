@@ -1,0 +1,97 @@
+.design {
+  @extend %dmsans-700;
+  line-height: 2.5;
+
+  &__title {
+    text-align: center;
+    color: $default;
+    font-size: 36px;
+    margin-bottom: -15px;
+  }
+
+  ul.design__filter {
+    margin-bottom: 65px;
+  }
+
+  ul.design__items {
+    margin-bottom: 118px;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+
+    :not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__btn {
+    border-color: transparent;
+    color: $button-alt;
+    background-color: transparent;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $default-mod;
+      cursor: pointer;
+    }
+  }
+
+  & .mixitup-control-active {
+    color: $default;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 35px;
+  }
+
+  &__item {
+    height: 246px;
+    width: 370px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__subtitle {
+    padding: 37px 0 2px 36px;
+    max-width: 210px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $default;
+    @extend %dmsans-700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__style {
+    color: $button;
+    padding-left: 36px;
+  }
+}
+
+.video {
+  position: relative;
+  display: block;
+  height: 501px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 125px;
+    width: 125px;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/video/video-play.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

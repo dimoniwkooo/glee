@@ -1,0 +1,136 @@
+.blog {
+  position: relative;
+  padding: 99px 0 0px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-size: 36px;
+    @extend %dmsans-700;
+  }
+
+  &__more {
+    position: relative;
+    color: $default-alt;
+    padding-top: 11px;
+    padding-right: 23px;
+    font-size: 16px;
+    @extend %dmsans-700;
+    transition: color 0.5s ease;
+
+    &:hover {
+      fill: $main;
+      color: $main;
+    }
+  }
+
+  &__icon {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+    width: 6px;
+    height: 11px;
+    transition: fill 0.5s ease;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    background-color: $main-light;
+    flex-direction: column;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+
+    p {
+      padding: 0 0 0 30px;
+      font-size: 18px;
+      line-height: 1.2;
+      @extend %dmsans-500;
+      max-height: 63px;
+      max-width: 320px;
+      margin-bottom: 17px;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__subtitle {
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(22px);
+    width: 102px;
+    height: 31px;
+    font-size: 14px;
+    line-height: 2.1;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 15px;
+    color: $main-light;
+    background-color: rgb(163, 187, 200);
+    @extend %poppins-700;
+  }
+
+  &__img {
+    width: 370px;
+    height: 250px;
+    margin-bottom: 33px;
+  }
+
+  &__posted {
+    padding: 10px 0 16px;
+    margin: auto 30px 0;
+    @extend %poppins-700;
+    font-size: 12px;
+    line-height: 2.5;
+    border-top: 1px solid $main-light-alt;
+  }
+
+  &__date {
+    margin-right: 30px;
+  }
+}
+
+.partners {
+  background-color: $main;
+  padding: 92px 0 88px;
+  position: relative;
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin: 0 50px;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $main;
+    top: -170px;
+    left: 0;
+    right: 0;
+    height: 190px;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,162 @@
+.footer {
+  color: $button-alt-dark;
+  font-size: 14px;
+  line-height: 2;
+
+  &__top {
+    padding: 75px 0 69px;
+    border-bottom: 1px solid #dae4e9;
+    display: flex;
+  }
+
+  &__item--contact {
+    width: 200px;
+    margin-right: 100px;
+    padding-top: 10px;
+    font-style: inherit;
+  }
+
+  &__item--services {
+    width: 190px;
+    margin-right: 110px;
+  }
+
+  &__item--account {
+    width: 155px;
+    margin-right: 144px;
+  }
+
+  &__logo-img {
+    margin-bottom: 20px;
+  }
+
+  &__address-item:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &__address-name {
+    text-transform: uppercase;
+  }
+
+  &__address-link {
+    color: inherit;
+  }
+
+  &__title {
+    padding-top: 25px;
+    margin-bottom: 17px;
+    font-size: 16px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $default-dark;
+    @extend %dmsans-700;
+  }
+
+  &__list:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    color: inherit;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $button;
+    }
+  }
+
+  &__item p {
+    padding: 4px 0;
+    max-width: 250px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.footer {
+  &__bottom {
+    padding: 26px 0;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.3;
+  }
+
+  &-menu {
+    display: flex;
+  }
+
+  &-menu__item {
+    &:not(:last-child) {
+      position: relative;
+      padding-right: 17px;
+      margin-right: 17px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      background-color: $button-alt-dark;
+      right: 1px;
+      height: 17px;
+      width: 2px;
+    }
+  }
+
+  &-menu__link {
+    color: inherit;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $button;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+
+  &__placeholder {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding: 0 17px;
+    font-size: 12px;
+    line-height: 1;
+    color: $placeholder;
+    transform: translateY(-50%);
+    @extend %dmsans-400;
+  }
+
+  &__input {
+    padding: 5px 15px;
+    max-width: 170px;
+    background-color: $main;
+    border: transparent;
+
+    &:focus + label {
+      display: none;
+    }
+  }
+
+  &__btn {
+    padding: 9px 19px;
+    line-height: 1.5;
+    background-color: $button;
+    color: $main-light;
+    border: transparent;
+    cursor: pointer;
+    @extend %dmsans-400;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: $button-alt;
+    }
+  }
+}

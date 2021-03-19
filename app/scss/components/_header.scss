@@ -1,0 +1,150 @@
+.header {
+  padding: 44px 0 0;
+  @extend %rubik-500;
+
+  @include for-big-desktop-up {
+  }
+}
+
+.logo {
+  display: flex;
+  color: $title;
+  font-size: 36px;
+  line-height: 1.6;
+  margin-right: 150px;
+
+  &__img {
+    height: 39px;
+    width: 146px;
+  }
+}
+
+.menu {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__items {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 34px;
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 1;
+    color: $title;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s ease, color 0.5s ease;
+
+    &:hover {
+      color: $button;
+      border-bottom: 1px solid $button;
+    }
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__item {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      display: flex;
+      margin-right: 19px;
+    }
+
+    &:hover {
+      background-color: $button-alt;
+    }
+  }
+
+  &__item--search {
+    background-color: $search;
+  }
+
+  &__item--menu {
+    background-color: $button;
+  }
+
+  &__item--cabinet {
+    width: 178px;
+    border-radius: 30px;
+    background-color: $main;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 90px;
+      height: 32px;
+      width: 1px;
+      background-color: $main-alt;
+    }
+  }
+
+  &__link::before {
+    content: '';
+    position: absolute;
+
+    top: 19px;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__link--search::before {
+    background-image: url('../images/icons/search.svg');
+    top: 15px;
+    left: 15px;
+  }
+
+  &__link--heart::before {
+    background-image: url('../images/icons/heart.svg');
+    left: 42px;
+  }
+
+  &__link--shop::before {
+    background-image: url('../images/icons/shop.svg');
+    left: 117px;
+  }
+
+  &__link--menu::before {
+    background-image: url('../images/icons/menu.svg');
+    top: 15px;
+    left: 15px;
+  }
+
+  &__count {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    background-color: white;
+    color: $title;
+
+    &--heart {
+      right: 108px;
+    }
+
+    &--shop {
+      right: 32px;
+    }
+  }
+}

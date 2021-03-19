@@ -1,41 +1,58 @@
 // text
 $default: #191919;
+$default-dark: #1f2044;
+$default-alt: #262626;
+$default-mod: #1a1a1a;
 $title: #436372;
+$title-alt: #243f4d;
+$placeholder: #234969;
 
 // background
 $main: #fcd7b6;
+$main-dark: #feefe2;
+$main-alt: #fde7d3;
 $main-light: #ffffff;
+$main-light-alt: #e0e0e0;
 $main-lighten: #f9fafb;
 $button: #a3bbc8;
+$button-alt: #8b8b8b;
+$button-alt-dark: #7b7b7b;
 $button-light: #a8bfcb;
 $search: #edf1f4;
 
 %dmsans-400 {
-  font-family: 'DMSans-Regular', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 400;
 }
 
 %dmsans-500 {
-  font-family: 'DMSans-Medium', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 500;
 }
 
 %dmsans-700 {
-  font-family: 'DMSans-Bold', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 700;
 }
 
 %poppins-700 {
-  font-family: 'Poppins-Bold', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
 
 %rubik-400 {
-  font-family: 'Rubik-Regular', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
 }
 
 %rubik-500 {
-  font-family: 'Rubik-Medium', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
+}
+
+@function max($numbers...){
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...){
+  @return m#{i}n(#{$numbers});
 }
