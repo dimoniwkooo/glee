@@ -1,15 +1,44 @@
 @mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
+  @media (max-width: 450px) {
+    @content;
+  }
 }
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
+  @media (max-width: 600px) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
+  @media (max-width: 900px) {
+    @content;
+  }
 }
 @mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
+  @media (max-width: 1200px) {
+    @content;
+  }
 }
 @mixin for-big-desktop-up {
-  @media (max-width: 1800px) { @content; }
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin trim($numLines: null) {
+  @if $numLines != null {
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  } @else {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+@mixin trimTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

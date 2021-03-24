@@ -50,9 +50,9 @@ $search: #edf1f4;
   font-weight: 500;
 }
 
-@function max($numbers...){
+@function max($numbers...) {
   @return m#{a}x(#{$numbers});
 }
-@function min($numbers...){
+@function min($numbers...) {
   @return m#{i}n(#{$numbers});
 }

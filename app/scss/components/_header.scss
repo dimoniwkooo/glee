@@ -1,17 +1,45 @@
 .header {
-  padding: 44px 0 0;
+  padding: 45px 0 50px;
   @extend %rubik-500;
 
-  @include for-big-desktop-up {
+  @include for-desktop-up {
+    padding: 25px 0;
+  }
+
+  &__btn {
+    display: none;
+    padding: 0;
+    margin: 0 19px 0 auto;
+    max-width: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    outline: transparent;
+    z-index: 100;
+
+    @include for-desktop-up {
+      display: block;
+    }
+
+    @include for-tablet-portrait-up {
+      margin-right: 0;
+    }
   }
 }
 
 .logo {
-  display: flex;
   color: $title;
   font-size: 36px;
   line-height: 1.6;
   margin-right: 150px;
+
+  @include for-desktop-up {
+    margin-right: 0;
+  }
 
   &__img {
     height: 39px;
@@ -20,17 +48,36 @@
 }
 
 .menu {
-  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &__items {
     display: flex;
+
+    @include for-desktop-up {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100px;
+      bottom: 0;
+      min-height: calc(100vh - 100px);
+      text-align: center;
+      background-color: $main-light;
+      display: block;
+      transform: translateX(-200%);
+      transition: transform 0.5s ease;
+      z-index: 100;
+    }
   }
 
   &__item:not(:last-child) {
     margin-right: 34px;
+
+    @include for-desktop-up {
+      margin-right: 0;
+    }
   }
 
   &__link {
@@ -38,11 +85,16 @@
     line-height: 1;
     color: $title;
     border-bottom: 1px solid transparent;
-    transition: border-bottom 0.5s ease, color 0.5s ease;
+    transition: border-bottom-color 0.5s ease, color 0.5s ease;
 
     &:hover {
       color: $button;
-      border-bottom: 1px solid $button;
+      border-bottom-color: 1px solid $button;
+    }
+
+    @include for-desktop-up {
+      display: block;
+      padding: 30px 0;
     }
   }
 }
@@ -50,79 +102,96 @@
 .user-nav {
   display: flex;
 
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+
   &__item {
     position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
 
     &:not(:last-child) {
       display: flex;
       margin-right: 19px;
     }
 
+    &:nth-child(2) {
+      margin-right: 0px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+
+    &--search {
+      background-color: $search;
+    }
+
+    &--menu {
+      background-color: $button;
+    }
+
+    &--favorite,
+    &--shop {
+      border-radius: 0;
+      width: 90px;
+      background-color: $main;
+    }
+
+    &--favorite {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+
+    &--shop {
+      position: relative;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 0px;
+        height: 32px;
+        width: 1px;
+        background-color: $main-alt;
+      }
+    }
+
     &:hover {
       background-color: $button-alt;
+
+      .user-nav__icon {
+        fill: $main-lighten;
+      }
     }
   }
 
-  &__item--search {
-    background-color: $search;
-  }
-
-  &__item--menu {
-    background-color: $button;
-  }
-
-  &__item--cabinet {
-    width: 178px;
-    border-radius: 30px;
-    background-color: $main;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 9px;
-      left: 90px;
-      height: 32px;
-      width: 1px;
-      background-color: $main-alt;
-    }
-  }
-
-  &__link::before {
-    content: '';
+  &__icon {
     position: absolute;
-
-    top: 19px;
     width: 20px;
     height: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $title-alt;
+    transition: fill 0.5s ease;
 
-  &__link--search::before {
-    background-image: url('../images/icons/search.svg');
-    top: 15px;
-    left: 15px;
-  }
+    &--favorite {
+      transform: translate(-10%, -15%);
+    }
 
-  &__link--heart::before {
-    background-image: url('../images/icons/heart.svg');
-    left: 42px;
-  }
+    &--shop {
+      transform: translate(-75%, -20%);
+    }
 
-  &__link--shop::before {
-    background-image: url('../images/icons/shop.svg');
-    left: 117px;
-  }
-
-  &__link--menu::before {
-    background-image: url('../images/icons/menu.svg');
-    top: 15px;
-    left: 15px;
+    &--menu {
+      fill: $main-light;
+    }
   }
 
   &__count {
@@ -132,19 +201,29 @@
     right: 8px;
     width: 16px;
     height: 16px;
-    border-radius: 50%;
-    font-size: 10px;
+    border-radius: 8px;
+    font-size: 9px;
     text-align: center;
-    line-height: 16px;
+    line-height: 1.8;
     background-color: white;
     color: $title;
+    z-index: 10;
 
-    &--heart {
-      right: 108px;
+    &--favorite {
+      right: 20px;
     }
 
     &--shop {
-      right: 32px;
+      right: 30px;
     }
   }
+}
+
+.menu__items.active {
+  transform: translateX(0%);
+  overflow-y: scroll;
+}
+
+.over.active {
+  overflow-y: hidden;
 }

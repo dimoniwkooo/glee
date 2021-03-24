@@ -1,60 +1,51 @@
 .design {
   @extend %dmsans-700;
   line-height: 2.5;
+  padding-top: 74px;
+
+  @include for-tablet-landscape-up {
+    padding-top: 25px;
+  }
 
   &__title {
     text-align: center;
-    color: $default;
+    color: inherit;
     font-size: 36px;
     margin-bottom: -15px;
-  }
 
-  ul.design__filter {
-    margin-bottom: 65px;
+    @include for-tablet-portrait-up {
+      font-size: 28px;
+    }
   }
 
   ul.design__items {
     margin-bottom: 118px;
   }
 
-  &__filter {
-    display: flex;
-    justify-content: center;
-
-    :not(:last-child) {
-      margin-right: 15px;
-    }
-  }
-
-  &__btn {
-    border-color: transparent;
-    color: $button-alt;
-    background-color: transparent;
-    transition: color 0.5s ease;
-
-    &:hover {
-      color: $default-mod;
-      cursor: pointer;
-    }
-  }
-
   & .mixitup-control-active {
-    color: $default;
+    color: inherit;
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     column-gap: 30px;
     row-gap: 35px;
+
+    @include for-desktop-up {
+      // grid-template-columns: 1fr auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
   }
 
   &__item {
-    height: 246px;
-    width: 370px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    min-height: 246px;
+    max-width: 370px;
+    width: 100%;
+    background-color: #f8f8f8;
   }
 
   &__subtitle {
@@ -62,36 +53,77 @@
     max-width: 210px;
     font-size: 20px;
     line-height: 1.2;
-    color: $default;
+    color: inherit;
     @extend %dmsans-700;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    transition: transform 0.5s ease;
+    @include trimTitle;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    color: inherit;
   }
 
   &__style {
     color: $button;
     padding-left: 36px;
   }
+
+  &__image {
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-27%);
+
+    @include for-tablet-portrait-up {
+      width: 180px;
+    }
+
+    &--chair {
+      transform: translate(-25%, -51%);
+
+      @include for-tablet-portrait-up {
+        width: 100px;
+      }
+    }
+  }
 }
 
 .video {
   position: relative;
   display: block;
-  height: 501px;
+  min-height: 501px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  &::before {
-    content: '';
+  @include for-tablet-portrait-up {
+    min-height: 301px;
+  }
+
+  &__ico {
+    fill: $button;
     position: absolute;
+    height: 127px;
+    width: 127px;
     top: 50%;
     left: 50%;
-    height: 125px;
-    width: 125px;
     transform: translate(-50%, -50%);
-    background-image: url('../images/video/video-play.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+    transition: fill 0.5s ease;
+
+    @include for-tablet-portrait-up {
+      // width: 70%;
+    }
+
+    &:hover {
+      fill: $button-alt;
+    }
   }
 }
