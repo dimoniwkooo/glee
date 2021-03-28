@@ -1,21 +1,18 @@
 .slider {
-  ul.slider__items {
+  &__items {
+    background-color: $main;
     padding: 100px 0 54px;
 
     @include for-tablet-landscape-up {
-      padding-top: 0;
+      padding: 0 0 54px;
     }
-  }
-
-  &__items {
-    background-color: $main;
   }
 
   &__inner {
     display: flex;
     justify-content: center;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       flex-direction: column;
     }
   }
@@ -27,38 +24,62 @@
     line-height: 1;
     text-transform: uppercase;
     color: $title-alt;
-    @include trimTitle;
+    @include line-clamp($font-size: 72px, $line-height: 1, $lines-to-show: 2);
 
     @include for-desktop-up {
       font-size: 60px;
+      max-width: 100%;
     }
 
     @include for-tablet-landscape-up {
       font-size: 48px;
+      @include line-clamp($font-size: 48px, $line-height: 1, $lines-to-show: 1);
     }
 
     @include for-tablet-portrait-up {
       max-width: 100%;
+      @include line-clamp($font-size: 48px, $line-height: 1, $lines-to-show: 2);
+    }
+
+    @include for-phone-only {
+      font-size: 36px;
+      margin-bottom: 10px;
     }
   }
 
   &__text {
     margin-bottom: 40px;
-    max-height: 55px;
     max-width: 360px;
     font-size: 18px;
     line-height: 1.7;
     color: $title;
     @extend %rubik-400;
-    @include trim(2);
+    @include line-clamp($font-size: 18px, $line-height: 1.7, $lines-to-show: 2);
+
+    @include for-desktop-up {
+      max-width: 100%;
+    }
 
     @include for-tablet-landscape-up {
       font-size: 16px;
+      @include line-clamp(
+        $font-size: 16px,
+        $line-height: 1.7,
+        $lines-to-show: 1
+      );
     }
 
     @include for-tablet-portrait-up {
       max-width: 100%;
-      padding-right: 5px;
+      @include line-clamp(
+        $font-size: 16px,
+        $line-height: 1.7,
+        $lines-to-show: 2
+      );
+    }
+
+    @include for-phone-only {
+      margin-bottom: 15px;
     }
   }
 
@@ -72,11 +93,12 @@
     background-color: $button;
     font-size: 15px;
     transition: color 0.5s ease, background-color 0.5s ease;
-    @include trimTitle;
+    @include line-clamp($font-size: 15px, $line-height: 1.9, $lines-to-show: 2);
 
     @include for-tablet-landscape-up {
       padding: 10px 5px 10px 20px;
       max-width: 150px;
+      line-height: 2.5;
     }
 
     &:hover {
@@ -107,15 +129,15 @@
     max-width: 430px;
 
     @include for-big-desktop-up {
-      margin-right: 0px;
+      margin-right: 0;
     }
 
     @include for-desktop-up {
-      margin: auto 10px;
+      padding: 25px 10px;
     }
 
     @include for-tablet-landscape-up {
-      padding: 25px 0;
+      max-width: 100%;
     }
 
     @include for-tablet-portrait-up {
@@ -132,13 +154,14 @@
     width: 100%;
 
     @include for-desktop-up {
-      padding: 100px 0;
+      padding: 100px 10px;
       max-width: 360px;
     }
 
     @include for-tablet-landscape-up {
-      padding: 75px 15px 50px;
-      max-width: 260px;
+      padding: 25px 0;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     @include for-tablet-portrait-up {
@@ -156,7 +179,6 @@
       width: 100%;
       border-radius: 50%;
       background: linear-gradient(-90deg, $main-light, transparent);
-      object-fit: contain;
       z-index: -1;
 
       @include for-desktop-up {
@@ -210,7 +232,7 @@
 
   &__title {
     max-width: 250px;
-    @include trim(1);
+    @include line-clamp($font-size: 18px, $line-height: 2.1, $lines-to-show: 1);
   }
 
   &__item {
@@ -225,7 +247,12 @@
     }
 
     @include for-desktop-up {
+      min-height: 170px;
       width: 50%;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e8e4df;
+      }
     }
 
     @include for-tablet-landscape-up {
@@ -234,14 +261,18 @@
     }
 
     @include for-tablet-portrait-up {
-      padding-left: 75px;
+      padding: 25px 10px 25px 75px;
     }
 
     p {
       color: #797876;
       max-height: 60px;
       max-width: 215px;
-      @include trim(2);
+      @include line-clamp(
+        $font-size: 16px,
+        $line-height: 1.9,
+        $lines-to-show: 2
+      );
 
       @include for-tablet-landscape-up {
         max-width: 100%;
@@ -263,6 +294,8 @@
 
       @include for-tablet-portrait-up {
         left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
@@ -274,7 +307,7 @@
       height: 20px;
       width: 20px;
       border-radius: 50%;
-      background-color: rgba(163, 187, 200, 0.341);
+      background-color: rgba(163, 187, 200, 0.3);
 
       @include for-big-desktop-up {
         left: 80px;
@@ -282,55 +315,57 @@
 
       @include for-tablet-portrait-up {
         left: 45px;
+        top: 95px;
       }
     }
-  }
 
-  &__item--support {
-    border-right: 1px solid #e8e4df;
+    &--support {
+      border-right: 1px solid #e8e4df;
 
-    @include for-tablet-landscape-up {
-      border-right: none;
-    }
-
-    &::before {
-      height: 50px;
-      width: 50px;
-      background-image: url('../images/icons/support.svg');
-    }
-  }
-
-  &__item--payment {
-    border-left: 1px solid #e8e4df;
-
-    @include for-desktop-up {
-      border-left: none;
-    }
-
-    &::before {
-      height: 43px;
-      width: 48px;
-      background-image: url('../images/icons/payment.svg');
-    }
-  }
-
-  &__item--delivery {
-    &::before {
-      height: 30px;
-      width: 50px;
-      background-image: url('../images/icons/delivery.svg');
-    }
-
-    &::after {
-      left: 185px;
-      top: 65px;
-
-      @include for-big-desktop-up {
-        left: 85px;
+      @include for-tablet-landscape-up {
+        border-right: none;
       }
 
-      @include for-tablet-portrait-up {
-        left: 50px;
+      &::before {
+        height: 50px;
+        width: 50px;
+        background-image: url('../images/icons/support.svg');
+      }
+    }
+
+    &--payment {
+      border-left: 1px solid #e8e4df;
+
+      @include for-desktop-up {
+        border-left: none;
+      }
+
+      &::before {
+        height: 43px;
+        width: 48px;
+        background-image: url('../images/icons/payment.svg');
+      }
+    }
+
+    &--delivery {
+      &::before {
+        height: 30px;
+        width: 50px;
+        background-image: url('../images/icons/delivery.svg');
+      }
+
+      &::after {
+        left: 185px;
+        top: 65px;
+
+        @include for-big-desktop-up {
+          left: 85px;
+        }
+
+        @include for-tablet-portrait-up {
+          left: 50px;
+          top: 85px;
+        }
       }
     }
   }

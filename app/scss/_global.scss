@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   line-height: 1.9;
   color: $default;
+  background-color: $main-light;
   @extend %rubik-400;
 }
 
@@ -33,4 +34,89 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 65px;
+
+  @include for-tablet-portrait-up {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 25px;
+  }
+
+  @include for-phone-only {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+
+      @include for-tablet-portrait-up {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__btn {
+    color: $button-alt;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $default-mod;
+    }
+  }
+}
+
+.top {
+  min-height: 125px;
+  background-color: $search;
+  padding: 29px 0 25px;
+  text-align: center;
+
+  &__title {
+    font-size: 36px;
+    line-height: 1;
+    color: #222933;
+    @extend %rubik-300;
+    margin-bottom: 6px;
+
+    @include for-tablet-portrait-up {
+      font-size: 24px;
+    }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #979ba0;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      &::after {
+        content: '/';
+        position: absolute;
+        right: -14px;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
 }

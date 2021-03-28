@@ -41,9 +41,14 @@ $(function () {
     ],
   })
 
-  $('.header__btn').on('click', function () {
+  function toggleSidebar() {
+    $('.burger').toggleClass('active')
     $('.menu__items').toggleClass('active')
     $('.over').toggleClass('active')
+  }
+
+  $('.burger').on('click tap', function () {
+    toggleSidebar()
   })
 
   mixitup('.products__items', {

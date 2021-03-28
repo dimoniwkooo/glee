@@ -1,6 +1,5 @@
 .blog {
-  position: relative;
-  padding: 99px 0 0px;
+  padding-top: 99px;
 
   @include for-tablet-landscape-up {
     padding-top: 25px;
@@ -53,13 +52,12 @@
   &__items {
     display: flex;
     justify-content: space-between;
-    // column-gap: 20px;
-    // row-gap: 10px;
     gap: 20px;
 
     @include for-desktop-up {
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 25px;
     }
   }
 
@@ -69,25 +67,25 @@
     background-color: $main-light;
     flex-direction: column;
     box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  }
 
-    p {
-      padding: 0 0 0 30px;
-      font-size: 18px;
-      line-height: 1.2;
-      @extend %dmsans-500;
-      max-width: 320px;
-      margin-bottom: 17px;
+  &__content {
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 1.2;
+    @extend %dmsans-500;
+    max-width: 320px;
+    margin-bottom: 14px;
 
-      @include trim(3);
-
-      @include for-tablet-portrait-up {
-        padding: 0 15px;
-      }
+    @include line-clamp($font-size: 18px, $line-height: 1.2, $lines-to-show: 3);
+    @include for-tablet-portrait-up {
+      padding: 0 15px;
     }
   }
 
   &__link {
     transition: transform 0.5s ease;
+
     &:hover {
       transform: scale(0.9);
     }
@@ -114,6 +112,7 @@
     width: 370px;
     height: 250px;
     margin-bottom: 33px;
+    object-fit: cover;
   }
 
   &__posted {
@@ -133,6 +132,7 @@
   &__author {
     position: relative;
     padding-left: 16px;
+    text-transform: uppercase;
   }
 
   &__date::before,
@@ -166,7 +166,7 @@
     max-width: 170px;
 
     &:first-child {
-      margin-left: 0px;
+      margin-left: 0;
     }
 
     @include for-phone-only {
@@ -174,7 +174,7 @@
     }
   }
 
-  &--main::before {
+  &--bg::before {
     content: '';
     position: absolute;
     background-color: $main;
@@ -189,7 +189,13 @@
     }
   }
 
+  &--about,
+  &--about::before {
+    background-color: #fef7f0;
+  }
+
   .slick-track {
+    //это решение вертикального располежения картинок, работает только вложенно
     display: flex;
 
     .slick-slide {

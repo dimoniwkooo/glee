@@ -1,9 +1,8 @@
 @import 'vars';
 @import 'fonts';
 @import 'normalize';
-@import 'global';
 @import 'mixins';
-@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
+@import 'global';
 
 @import 'components/header';
 @import 'components/slider';
@@ -11,3 +10,4 @@
 @import 'components/design';
 @import 'components/blog';
 @import 'components/footer';
+@import 'components/about';

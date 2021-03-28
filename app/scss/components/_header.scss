@@ -1,33 +1,60 @@
 .header {
-  padding: 45px 0 50px;
+  padding: 46px 0 50px;
+  // min-height: 146px;
+  //! display: flex; не могу растолкнуть элементы, вроде как в контейнере проблета, подскажи
   @extend %rubik-500;
 
   @include for-desktop-up {
     padding: 25px 0;
   }
+}
 
-  &__btn {
-    display: none;
-    padding: 0;
-    margin: 0 19px 0 auto;
-    max-width: 100%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    outline: transparent;
-    z-index: 100;
+.burger {
+  display: none;
+  padding: 0;
+  margin: 0 19px 0 auto;
+  max-width: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: $main;
+  outline: transparent;
+  z-index: 100;
 
-    @include for-desktop-up {
-      display: block;
-    }
+  @include for-desktop-up {
+    display: block;
+  }
 
-    @include for-tablet-portrait-up {
-      margin-right: 0;
-    }
+  @include for-tablet-portrait-up {
+    margin: 0 0 0 auto;
+  }
+
+  @include for-tablet-portrait-up {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  &__bar {
+    display: block;
+    height: 2px;
+    width: 22px;
+    background-color: $main-light;
+    margin: 6px auto;
+    transition: transform 0.7s ease;
+  }
+
+  &.active .burger__bar--top {
+    transform: translateY(8px) rotateZ(45deg);
+  }
+
+  &.active .burger__bar--bottom {
+    transform: translateY(-8px) rotateZ(-45deg);
+  }
+
+  &.active .burger__bar--middle {
+    width: 0;
   }
 }
 
@@ -44,6 +71,11 @@
   &__img {
     height: 39px;
     width: 146px;
+    object-fit: contain;
+
+    @include for-phone-only {
+      width: 60px;
+    }
   }
 }
 
@@ -69,6 +101,16 @@
       transform: translateX(-200%);
       transition: transform 0.5s ease;
       z-index: 100;
+
+      @include for-tablet-portrait-up {
+        top: 89px;
+        min-height: calc(100vh - 89px);
+      }
+    }
+
+    &.active {
+      transform: translateX(0%);
+      overflow-y: scroll;
     }
   }
 
@@ -101,21 +143,23 @@
 
 .user-nav {
   display: flex;
-
-  @include for-tablet-portrait-up {
-    display: none;
-  }
+  align-items: center;
 
   &__item {
     position: relative;
+    font-size: 0;
 
     &:not(:last-child) {
       display: flex;
       margin-right: 19px;
+
+      @include for-tablet-portrait-up {
+        margin-right: 10px;
+      }
     }
 
     &:nth-child(2) {
-      margin-right: 0px;
+      margin-right: 0;
     }
   }
 
@@ -126,12 +170,17 @@
     border-radius: 50%;
     transition: background-color 0.5s ease;
 
-    &--search {
-      background-color: $search;
+    @include for-tablet-portrait-up {
+      width: 30px;
+      height: 30px;
     }
 
-    &--menu {
-      background-color: $button;
+    &:hover {
+      background-color: $button-alt;
+
+      .user-nav__icon {
+        fill: $main-lighten;
+      }
     }
 
     &--favorite,
@@ -139,6 +188,10 @@
       border-radius: 0;
       width: 90px;
       background-color: $main;
+
+      @include for-tablet-portrait-up {
+        width: 50px;
+      }
     }
 
     &--favorite {
@@ -159,7 +212,33 @@
         height: 32px;
         width: 1px;
         background-color: $main-alt;
+
+        @include for-tablet-portrait-up {
+          height: 14px;
+        }
       }
+    }
+  }
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+    outline: transparent;
+    cursor: pointer;
+
+    @include for-tablet-portrait-up {
+      height: 30px;
+      width: 30px;
+    }
+
+    &--search {
+      background-color: $search;
+    }
+
+    &--menu {
+      background-color: $button;
     }
 
     &:hover {
@@ -180,6 +259,11 @@
     transform: translate(-50%, -50%);
     fill: $title-alt;
     transition: fill 0.5s ease;
+
+    @include for-tablet-portrait-up {
+      width: 15px;
+      height: 15px;
+    }
 
     &--favorite {
       transform: translate(-10%, -15%);
@@ -209,19 +293,26 @@
     color: $title;
     z-index: 10;
 
+    @include for-tablet-portrait-up {
+      top: 5px;
+    }
+
     &--favorite {
       right: 20px;
+
+      @include for-tablet-portrait-up {
+        right: 2px;
+      }
     }
 
     &--shop {
       right: 30px;
+
+      @include for-tablet-portrait-up {
+        right: 12px;
+      }
     }
   }
-}
-
-.menu__items.active {
-  transform: translateX(0%);
-  overflow-y: scroll;
 }
 
 .over.active {

@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-ul[class],
+ul,
 ol[class] {
   padding: 0;
 }
@@ -21,7 +21,7 @@ h4,
 h5,
 h6,
 p,
-ul[class],
+ul,
 ol[class],
 li,
 figure,
@@ -48,6 +48,13 @@ select {
   font: inherit;
 }
 
-a[class] {
+a {
   text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
 }
