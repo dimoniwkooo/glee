@@ -6,6 +6,19 @@ const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
 const del = require('del')
 const browserSync = require('browser-sync').create()
+const fileinclude = require('gulp-file-include')
+
+function htmlInclude() {
+  return src(['app/html/*.html'])
+    .pipe(
+      fileinclude({
+        prefix: '@@',
+        basepath: '@file',
+      })
+    )
+    .pipe(dest('app/'))
+    .pipe(browserSync.stream())
+}
 
 function browsersync() {
   browserSync.init({
@@ -20,6 +33,8 @@ function styles() {
   return src([
     'node_modules/slick-carousel/slick/slick.scss',
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
+    'node_modules/rateyo/src/jquery.rateyo.css',
+    'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
     'app/scss/style.scss',
   ])
     .pipe(scss({ outputStyle: 'compressed' }))
@@ -40,6 +55,8 @@ function scripts() {
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/mixitup/dist/mixitup.js',
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
     'app/js/main.js',
   ])
     .pipe(concat('main.min.js'))
@@ -79,6 +96,7 @@ function watching() {
   watch(['app/**/*.html']).on('change', browserSync.reload)
 }
 
+exports.htmlInclude = htmlInclude
 exports.styles = styles
 exports.scripts = scripts
 exports.browsersync = browsersync
@@ -87,4 +105,4 @@ exports.images = images
 exports.cleanDist = cleanDist
 exports.build = series(cleanDist, images, build)
 
-exports.default = parallel(styles, scripts, browsersync, watching)
+exports.default = parallel(styles, scripts, htmlInclude, browsersync, watching)

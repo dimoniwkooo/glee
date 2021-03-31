@@ -5,9 +5,11 @@
 @import 'global';
 
 @import 'components/header';
-@import 'components/slider';
-@import 'components/products';
-@import 'components/design';
-@import 'components/blog';
+@import 'components/homepage/slider';
+@import 'components/homepage/products';
+@import 'components/homepage/design';
+@import 'components/homepage/blog';
 @import 'components/footer';
 @import 'components/about';
+@import 'components/catalog';
+

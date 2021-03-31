@@ -36,6 +36,10 @@ body {
   border: 0;
 }
 
+.jq-ry-container {
+  padding: 0;
+}
+
 .filter {
   display: flex;
   justify-content: center;
@@ -118,5 +122,39 @@ body {
 
   &__link {
     color: inherit;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 16px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $button;
+    color: $title;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    &--active,
+    &:hover {
+      background-color: $button;
+      color: $main-light;
+    }
+  }
+
+  &__next {
+    width: 75px;
   }
 }

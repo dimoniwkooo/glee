@@ -1,0 +1,290 @@
+.catalog {
+  padding: 110px 0 120px;
+
+  @include for-tablet-landscape-up {
+    padding: 50px 0;
+  }
+
+  &__inner {
+    display: flex;
+    @include for-tablet-portrait-up {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__filter {
+    max-width: 270px;
+    width: 100%;
+    margin-right: 30px;
+
+    @include for-tablet-portrait-up {
+      margin-right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__items {
+    padding-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px 30px;
+    margin-bottom: 110px;
+
+    @include for-desktop-up {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+    min-height: 380px;
+    max-width: 270px;
+    width: 100%;
+    box-shadow: 0 6px 47px 3px rgba(37, 37, 37, 0.05);
+    border-radius: 10px;
+
+    &:hover .product__lists {
+      opacity: 1;
+    }
+
+    &--list {
+      min-width: 100%;
+      min-height: 500px;
+      box-shadow: none;
+
+      @include for-desktop-up {
+        min-height: 400px;
+      }
+
+      & .product__lists {
+        display: none;
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      .product__lists {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.price {
+  margin-bottom: 67px;
+
+  &__range {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__from,
+  &__to {
+    font-size: 14px;
+    line-height: 3;
+    color: $title-alt;
+  }
+
+  &__to {
+    margin-right: 7px;
+  }
+}
+
+.irs--flat {
+  height: 28px;
+  margin-bottom: 2px;
+
+  .irs-line {
+    top: 12px;
+    height: 3px;
+    background-color: #dfe7ec;
+    border-radius: 0;
+  }
+
+  .irs-bar {
+    top: 12px;
+    height: 4px;
+    background-color: $button;
+  }
+
+  .irs-handle {
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-color: $button;
+
+    & > i:first-child {
+      display: none;
+    }
+  }
+
+  .irs-min,
+  .irs-max,
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    display: none;
+  }
+}
+
+.filters {
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 27px;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $title-alt;
+    @extend %dmsans-700;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 38px;
+      background-color: $button;
+      top: 7px;
+      right: -54px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 51px;
+
+    &--brand {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__input {
+    @extend %checkbox-hidden;
+
+    &:checked + .filters__checkbox {
+      background-color: #edf1f4;
+
+      & .filters__count {
+        color: $title-alt;
+      }
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px 0 14px;
+    line-height: 2.7;
+    color: $title-alt;
+    border-radius: 5px;
+
+    &--up {
+      text-transform: uppercase;
+    }
+
+    & .filters__count {
+      color: #d6d6d6;
+    }
+
+    &--cat::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 23px;
+      transform: translateY(-55%);
+      width: 5px;
+      height: 10px;
+      background-image: url('../../images/icons/catalog-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.recent {
+  margin-bottom: 25px;
+
+  &__item {
+    padding: 6px 0;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    height: 70px;
+    width: 70px;
+    border: 2px solid #f9f9f9;
+    background-color: #fefefe;
+  }
+
+  &__img {
+    max-width: 70px;
+    max-height: 70px;
+    object-fit: contain;
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__content {
+    padding: 6px 5px 0;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+    color: #333333;
+    @extend %rubik-400;
+  }
+
+  &__rate {
+    max-width: 95px;
+    margin-bottom: 3px;
+  }
+
+  &__price {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333333;
+    color: inherit;
+  }
+}
+
+.view {
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    display: flex;
+    outline: transparent;
+
+    &--active {
+      .view__icon {
+        fill: $main;
+      }
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    fill: $button;
+  }
+}

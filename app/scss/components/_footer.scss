@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
 
-    &--about{
+    &--about {
       padding: 60px 0 63px;
     }
 
@@ -104,7 +104,7 @@
 
   &__list {
     max-width: 200px;
-    @include line-clamp($font-size: 14px, $line-height: 2, $lines-to-show: 1);
+    @include line-clamp($lines-to-show: 1);
 
     &:not(:last-child) {
       margin-bottom: 4px;
@@ -132,9 +132,10 @@
     max-width: 250px;
     line-height: 1.7;
     margin-bottom: 35px;
-    @include line-clamp($font-size: 14px, $line-height: 1.7, $lines-to-show: 2);
+    @include line-clamp($lines-to-show: 2);
 
     @include for-tablet-landscape-up {
+      @include line-clamp($lines-to-show: 1);
       max-width: 100%;
     }
   }
@@ -201,31 +202,25 @@
 .form {
   position: relative;
   display: flex;
-
-  &__placeholder {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    padding: 0 17px;
-    font-size: 12px;
-    line-height: 1;
-    color: $placeholder;
-    transform: translateY(-50%);
-    @extend %dmsans-400;
-  }
+  justify-content: center;
 
   &__input {
     padding: 5px 15px;
     max-width: 170px;
+    width: 100%;
     background-color: $main;
     border: transparent;
 
-    &:focus + label {
-      display: none;
+    &::placeholder {
+      padding: 0 2px;
+      font-size: 12px;
+      line-height: 1;
+      color: $placeholder;
+      @extend %dmsans-400;
     }
 
-    @include for-phone-only {
-      max-width: 188px;
+    @include for-tablet-portrait-up {
+      max-width: 250px;
     }
   }
 

@@ -18,6 +18,14 @@ $button-alt-dark: #7b7b7b;
 $button-light: #a8bfcb;
 $search: #edf1f4;
 
+%checkbox-hidden{
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
 %dmsans-400 {
   font-family: 'DMSans', sans-serif;
   font-weight: 400;

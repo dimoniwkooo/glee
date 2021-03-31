@@ -24,7 +24,7 @@
     line-height: 1;
     text-transform: uppercase;
     color: $title-alt;
-    @include line-clamp($font-size: 72px, $line-height: 1, $lines-to-show: 2);
+    @include line-clamp($lines-to-show: 2);
 
     @include for-desktop-up {
       font-size: 60px;
@@ -33,17 +33,18 @@
 
     @include for-tablet-landscape-up {
       font-size: 48px;
-      @include line-clamp($font-size: 48px, $line-height: 1, $lines-to-show: 1);
+      @include line-clamp($lines-to-show: 1);
     }
 
     @include for-tablet-portrait-up {
       max-width: 100%;
-      @include line-clamp($font-size: 48px, $line-height: 1, $lines-to-show: 2);
+      @include line-clamp($lines-to-show: 2);
     }
 
     @include for-phone-only {
       font-size: 36px;
       margin-bottom: 10px;
+      line-height: 1.5;
     }
   }
 
@@ -54,7 +55,7 @@
     line-height: 1.7;
     color: $title;
     @extend %rubik-400;
-    @include line-clamp($font-size: 18px, $line-height: 1.7, $lines-to-show: 2);
+    @include line-clamp($lines-to-show: 2);
 
     @include for-desktop-up {
       max-width: 100%;
@@ -62,20 +63,12 @@
 
     @include for-tablet-landscape-up {
       font-size: 16px;
-      @include line-clamp(
-        $font-size: 16px,
-        $line-height: 1.7,
-        $lines-to-show: 1
-      );
+      @include line-clamp($lines-to-show: 1);
     }
 
     @include for-tablet-portrait-up {
       max-width: 100%;
-      @include line-clamp(
-        $font-size: 16px,
-        $line-height: 1.7,
-        $lines-to-show: 2
-      );
+      @include line-clamp($lines-to-show: 2);
     }
 
     @include for-phone-only {
@@ -93,7 +86,7 @@
     background-color: $button;
     font-size: 15px;
     transition: color 0.5s ease, background-color 0.5s ease;
-    @include line-clamp($font-size: 15px, $line-height: 1.9, $lines-to-show: 2);
+    @include line-clamp($lines-to-show: 2);
 
     @include for-tablet-landscape-up {
       padding: 10px 5px 10px 20px;
@@ -232,7 +225,7 @@
 
   &__title {
     max-width: 250px;
-    @include line-clamp($font-size: 18px, $line-height: 2.1, $lines-to-show: 1);
+    @include line-clamp($lines-to-show: 1);
   }
 
   &__item {
@@ -268,11 +261,7 @@
       color: #797876;
       max-height: 60px;
       max-width: 215px;
-      @include line-clamp(
-        $font-size: 16px,
-        $line-height: 1.9,
-        $lines-to-show: 2
-      );
+      @include line-clamp($lines-to-show: 2);
 
       @include for-tablet-landscape-up {
         max-width: 100%;

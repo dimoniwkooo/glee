@@ -27,13 +27,7 @@
   }
 
   @include for-tablet-portrait-up {
-    margin: 0 0 0 auto;
-  }
-
-  @include for-tablet-portrait-up {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    margin: 0 0 10px;
   }
 
   &__bar {
@@ -68,14 +62,15 @@
     margin-right: 0;
   }
 
+  @include for-tablet-portrait-up {
+    display: inline-block;
+    width: 50%;
+  }
+
   &__img {
     height: 39px;
     width: 146px;
     object-fit: contain;
-
-    @include for-phone-only {
-      width: 60px;
-    }
   }
 }
 
@@ -83,6 +78,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include for-tablet-portrait-up {
+    flex-wrap: wrap;
+  }
 
   &__items {
     display: flex;
@@ -103,8 +102,8 @@
       z-index: 100;
 
       @include for-tablet-portrait-up {
-        top: 89px;
-        min-height: calc(100vh - 89px);
+        top: 160px;
+        min-height: calc(100vh - 160px);
       }
     }
 
@@ -115,7 +114,7 @@
   }
 
   &__item:not(:last-child) {
-    margin-right: 34px;
+    margin-right: 39px;
 
     @include for-desktop-up {
       margin-right: 0;
@@ -123,6 +122,7 @@
   }
 
   &__link {
+    position: relative;
     font-size: 15px;
     line-height: 1;
     color: $title;
@@ -138,12 +138,24 @@
       display: block;
       padding: 30px 0;
     }
+
+    &--plus::after {
+      content: '+';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 
 .user-nav {
   display: flex;
   align-items: center;
+
+  @include for-tablet-portrait-up {
+    margin-left: auto;
+  }
 
   &__item {
     position: relative;
@@ -154,7 +166,7 @@
       margin-right: 19px;
 
       @include for-tablet-portrait-up {
-        margin-right: 10px;
+        margin-right: 5px;
       }
     }
 
@@ -170,11 +182,6 @@
     border-radius: 50%;
     transition: background-color 0.5s ease;
 
-    @include for-tablet-portrait-up {
-      width: 30px;
-      height: 30px;
-    }
-
     &:hover {
       background-color: $button-alt;
 
@@ -188,10 +195,6 @@
       border-radius: 0;
       width: 90px;
       background-color: $main;
-
-      @include for-tablet-portrait-up {
-        width: 50px;
-      }
     }
 
     &--favorite {
@@ -212,10 +215,6 @@
         height: 32px;
         width: 1px;
         background-color: $main-alt;
-
-        @include for-tablet-portrait-up {
-          height: 14px;
-        }
       }
     }
   }
@@ -227,11 +226,6 @@
     transition: background-color 0.5s ease;
     outline: transparent;
     cursor: pointer;
-
-    @include for-tablet-portrait-up {
-      height: 30px;
-      width: 30px;
-    }
 
     &--search {
       background-color: $search;
@@ -259,11 +253,6 @@
     transform: translate(-50%, -50%);
     fill: $title-alt;
     transition: fill 0.5s ease;
-
-    @include for-tablet-portrait-up {
-      width: 15px;
-      height: 15px;
-    }
 
     &--favorite {
       transform: translate(-10%, -15%);
@@ -293,24 +282,12 @@
     color: $title;
     z-index: 10;
 
-    @include for-tablet-portrait-up {
-      top: 5px;
-    }
-
     &--favorite {
       right: 20px;
-
-      @include for-tablet-portrait-up {
-        right: 2px;
-      }
     }
 
     &--shop {
       right: 30px;
-
-      @include for-tablet-portrait-up {
-        right: 12px;
-      }
     }
   }
 }

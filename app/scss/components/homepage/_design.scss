@@ -59,7 +59,7 @@
   }
 
   &__link {
-    @include line-clamp($font-size: 20px, $line-height: 1.2, $lines-to-show: 2);
+    @include line-clamp( $lines-to-show: 2);
     color: inherit;
   }
 
