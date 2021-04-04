@@ -1,0 +1,109 @@
+.stats {
+  padding: 70px 0;
+  background-color: $main;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+
+    @include for-desktop-up {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 25px;
+    }
+
+    @include for-tablet-portrait-up {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 96px 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1;
+    color: $title-alt;
+    @extend %dmsans-700;
+
+    &:not(:first-child) {
+      padding-right: 65px;
+
+      @include for-tablet-portrait-up {
+        padding-right: 30px;
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      margin-bottom: 50px;
+      padding: 96px 30px 10px;
+      max-width: 350px;
+      width: 100%;
+    }
+
+    @include for-phone-only{
+      line-height: 1.5;
+    }
+
+    span {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      transform: translateX(-70%);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 10;
+    }
+
+    &--rate::before {
+      width: 64px;
+      height: 57px;
+      background-image: url('../../images/about/rate.svg');
+    }
+
+    &--delivered::before {
+      width: 64px;
+      height: 40px;
+      background-image: url('../../images/about/delivered.svg');
+    }
+
+    &--working::before {
+      width: 67px;
+      height: 64px;
+      background-image: url('../../images/about/working.svg');
+    }
+
+    &--brands::before {
+      width: 48px;
+      height: 64px;
+      background-image: url('../../images/about/brands.svg');
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 95px;
+      top: 43px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: $button;
+
+      @include for-desktop-up {
+        display: none;
+      }
+    }
+  }
+}

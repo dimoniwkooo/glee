@@ -1,0 +1,35 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 65px;
+
+  @include for-tablet-portrait-up {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 25px;
+  }
+
+  @include for-phone-only {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+
+      @include for-tablet-portrait-up {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__btn {
+    color: $button-alt;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $default-mod;
+    }
+  }
+}

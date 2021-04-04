@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glee | Blog</title>
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="over">
+  @@include('components/global/_header.html')
+
+  <main class="main">
+    @@include('components/global/_top.html',{
+    "title": "Blog",
+    "need": false
+    })
+
+    <section class="posts">
+      <div class="container">
+        <div class="posts__inner">
+          <h2 class="sr-only">this is blog page with latest news</h2>
+          <div class="posts__content">
+            <ul class="posts__items">
+              @@include('components/posts/_item.html',{
+              "name": "Fonsectetur adipisicing eiusmod",
+              "src": "1.jpg",
+              "alt":'"bed against the background of the window"'
+              })
+
+              @@include('components/posts/_item.html',{
+              "name": "Fonsectetur adipisicing elit,",
+              "src": "2.jpg",
+              "alt":'"bed against the background of the window"'
+              })
+
+              @@include('components/posts/_item.html',{
+              "name": "Fsectetur adipisicing tempor incididunt",
+              "src": "3.jpg",
+              "alt":'"bed against the background of the window"'
+              })
+
+              @@include('components/posts/_item.html',{
+              "name": "vonsectetur adipisicing elit",
+              "src": "4.jpg",
+              "alt":'"bed against the background of the window"'
+              })
+            </ul>
+          </div>
+
+          <div class="posts__filters filters">
+            @@include('components/global/filters/_search.html')
+
+            @@include('components/global/filters/_category.html',{
+            "class": '"filters__form filters__form--posts"'
+            })
+
+            @@include('components/posts/_recent.html')
+          </div>
+        </div>
+
+        @@include('components/global/_pagination.html',{
+        "class": '"pagination pagination--posts"'
+        })
+      </div>
+    </section>
+
+    @@include('components/global/_partners.html',{
+    "class": '"partners partners--catalog"'
+    })
+  </main>
+
+  @@include('components/global/_footer.html',{
+  "class": '"footer__top footer__top--about"'
+  })
+
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

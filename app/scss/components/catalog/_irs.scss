@@ -1,0 +1,36 @@
+.irs--flat {
+  height: 28px;
+  margin-bottom: 2px;
+
+  .irs-line {
+    top: 12px;
+    height: 3px;
+    background-color: #dfe7ec;
+    border-radius: 0;
+  }
+
+  .irs-bar {
+    top: 12px;
+    height: 4px;
+    background-color: $button;
+  }
+
+  .irs-handle {
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-color: $button;
+
+    & > i:first-child {
+      display: none;
+    }
+  }
+
+  .irs-min,
+  .irs-max,
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    display: none;
+  }
+}

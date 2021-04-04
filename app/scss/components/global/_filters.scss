@@ -1,0 +1,122 @@
+.filters {
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 27px;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $title-alt;
+    @extend %dmsans-700;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 38px;
+      background-color: $button;
+      top: 7px;
+      right: -54px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 51px;
+
+    &--brand {
+      margin-bottom: 45px;
+    }
+
+    &--posts {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__input {
+    @extend %checkbox-hidden;
+
+    &:checked + .filters__checkbox {
+      background-color: $search;
+
+      & .filters__count {
+        color: $title-alt;
+      }
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px 0 14px;
+    line-height: 2.7;
+    color: $title-alt;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: $search;
+    }
+
+    &--up {
+      text-transform: uppercase;
+    }
+
+    & .filters__count {
+      color: #d6d6d6;
+    }
+
+    &--cat::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 23px;
+      transform: translateY(-55%);
+      width: 5px;
+      height: 10px;
+      background-image: url('../../images/icons/catalog-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__form-inner {
+    position: relative;
+    display: flex;
+  }
+
+  &__search {
+    width: 100%;
+    padding: 4px 5px;
+    border-radius: 5px;
+    border: 1px solid #ebf1f3;
+    margin-bottom: 4px;
+    outline: transparent;
+  }
+
+  &__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 47px;
+    height: 40px;
+    background-color: $search;
+    right: 0;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    fill: #0f4578;
+  }
+}

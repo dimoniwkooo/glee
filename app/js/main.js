@@ -60,7 +60,6 @@ $(function () {
     autoplaySpeed: 5000,
   })
 
-  // $('.partners__items').slick('setPosition')
   $('.partners__items').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -92,7 +91,6 @@ $(function () {
           slidesToShow: 1,
         },
       },
-
     ],
   })
 
@@ -100,7 +98,7 @@ $(function () {
   if (products) {
     mixitup(products, {
       selectors: {
-        target: '.products__item',
+        control: '.filter-1',
       },
     })
   }
@@ -109,7 +107,7 @@ $(function () {
   if (design) {
     mixitup(design, {
       selectors: {
-        target: '.design__item',
+        control: '.filter-2',
       },
     })
   }

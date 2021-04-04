@@ -4,12 +4,33 @@
 @import 'mixins';
 @import 'global';
 
-@import 'components/header';
-@import 'components/homepage/slider';
-@import 'components/homepage/products';
-@import 'components/homepage/design';
-@import 'components/homepage/blog';
-@import 'components/footer';
-@import 'components/about';
-@import 'components/catalog';
+@import 'components/global/header';
+@import 'components/global/footer';
+@import 'components/global/top';
+@import 'components/global/pagination';
+@import 'components/global/blog';
+@import 'components/global/partners';
+@import 'components/global/product';
+@import 'components/global/filters';
+@import 'components/global/recent';
 
+@import 'components/index/slider';
+@import 'components/index/services';
+@import 'components/index/filter';
+@import 'components/index/product-card';
+@import 'components/index/products';
+@import 'components/index/design';
+
+@import 'components/about/about';
+@import 'components/about/team';
+@import 'components/about/stats';
+
+@import 'components/catalog/catalog';
+@import 'components/catalog/irs';
+@import 'components/catalog/price';
+@import 'components/catalog/view';
+
+@import 'components/posts/posts';
+@import 'components/posts/post';
+@import 'components/posts/author';
+@import 'components/posts/comments';

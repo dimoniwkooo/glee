@@ -1,0 +1,85 @@
+.post {
+padding-bottom: 45px;
+
+  &__image {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__img-left,
+  &__img-right {
+    height: 210px;
+    max-width: 320px;
+    object-fit: cover;
+  }
+
+  &__img-left {
+    float: left;
+    margin-right: 30px;
+  }
+
+  &__img-right {
+    float: left;
+    margin-left: 30px;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+
+    p {
+      color: $title-alt;
+      margin: 13px 0;
+
+      &:nth-child(2) {
+        margin: 3px 0;
+        @extend %rubik-500;
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      color: $default-dark-alt;
+      @extend %rubik-400;
+
+      @include for-tablet-portrait-up{
+        line-height: 1.5;
+      }
+    }
+
+    h3 {
+      padding-top: 20px;
+      font-size: 18px;
+      color: $title-alt;
+      @extend %rubik-500;
+    }
+
+    blockquote {
+      margin: 37px 0 45px;
+      padding: 15px 34px;
+      background-color: $search;
+      color: $title-alt;
+      border-left: 6px solid $button;
+      cite {
+        position: relative;
+        margin: 9px 0 1px;
+        padding: 0 45px;
+        display: block;
+        font-style: normal;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          height: 2px;
+          width: 20px;
+          background-color: $button;
+        }
+      }
+    }
+  }
+}
+
+p.post__p {
+  margin-bottom: 40px;
+}

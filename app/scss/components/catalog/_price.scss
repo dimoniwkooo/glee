@@ -1,0 +1,19 @@
+.price {
+  margin-bottom: 67px;
+
+  &__range {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__from,
+  &__to {
+    font-size: 14px;
+    line-height: 3;
+    color: $title-alt;
+  }
+
+  &__to {
+    margin-right: 7px;
+  }
+}

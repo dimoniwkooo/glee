@@ -5,8 +5,8 @@
   font-style: normal;
   font-display: swap;
   src: local('DMSans-Regular'),
-    url('../fonts/DMSans-Regular.woff2') format('woff2'),
-    url('../fonts/DMSans-Regular.woff') format('woff');
+    url('../fonts/DMSans/DMSans-Regular.woff2') format('woff2'),
+    url('../fonts/DMSans/DMSans-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -15,8 +15,8 @@
   font-style: normal;
   font-display: swap;
   src: local('DMSans-Medium'),
-    url('../fonts/DMSans-Medium.woff2') format('woff2'),
-    url('../fonts/DMSans-Medium.woff') format('woff');
+    url('../fonts/DMSans/DMSans-Medium.woff2') format('woff2'),
+    url('../fonts/DMSans/DMSans-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -24,8 +24,20 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('DMSans-Bold'), url('../fonts/DMSans-Bold.woff2') format('woff2'),
-    url('../fonts/DMSans-Bold.woff') format('woff');
+  src: local('DMSans-Bold'),
+    url('../fonts/DMSans/DMSans-Bold.woff2') format('woff2'),
+    url('../fonts/DMSans/DMSans-Bold.woff') format('woff');
+}
+
+// Nunito
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('Nunito-Bold'),
+    url('../fonts/Nunito/Nunito-Bold.woff2') format('woff2'),
+    url('../fonts/Nunito/Nunito-Bold.woff') format('woff');
 }
 
 // Poppins
@@ -35,8 +47,8 @@
   font-style: normal;
   font-display: swap;
   src: local('Poppins-SemiBold'),
-    url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
-    url('../fonts/Poppins-SemiBold.woff') format('woff');
+    url('../fonts/Poppins/Poppins-SemiBold.woff2') format('woff2'),
+    url('../fonts/Poppins/Poppins-SemiBold.woff') format('woff');
 }
 
 @font-face {
@@ -44,8 +56,9 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('Poppins-Bold'), url('../fonts/Poppins-Bold.woff2') format('woff2'),
-    url('../fonts/Poppins-Bold.woff') format('woff');
+  src: local('Poppins-Bold'),
+    url('../fonts/Poppins/Poppins-Bold.woff2') format('woff2'),
+    url('../fonts/Poppins/Poppins-Bold.woff') format('woff');
 }
 
 // Rubik
@@ -54,8 +67,9 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: local('Rubik-Light'), url('../fonts/Rubik-Light.woff2') format('woff2'),
-    url('../fonts/Rubik-Light.woff') format('woff');
+  src: local('Rubik-Light'),
+    url('../fonts/Rubik/Rubik-Light.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-Light.woff') format('woff');
 }
 
 @font-face {
@@ -64,8 +78,8 @@
   font-style: normal;
   font-display: swap;
   src: local('Rubik-Regular'),
-    url('../fonts/Rubik-Regular.woff2') format('woff2'),
-    url('../fonts/Rubik-Regular.woff') format('woff');
+    url('../fonts/Rubik/Rubik-Regular.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -73,8 +87,9 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local('Rubik-Medium'), url('../fonts/Rubik-Medium.woff2') format('woff2'),
-    url('../fonts/Rubik-Medium.woff') format('woff');
+  src: local('Rubik-Medium'),
+    url('../fonts/Rubik/Rubik-Medium.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -82,6 +97,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('Rubik-Bold'), url('../fonts/Rubik-Bold.woff2') format('woff2'),
-    url('../fonts/Rubik-Bold.woff') format('woff');
+  src: local('Rubik-Bold'),
+    url('../fonts/Rubik/Rubik-Bold.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-Bold.woff') format('woff');
 }

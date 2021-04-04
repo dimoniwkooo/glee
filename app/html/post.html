@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glee | Blog details</title>
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="over">
+  @@include('components/global/_header.html')
+
+  <main class="main">
+    @@include('components/global/_top.html', {
+    "name": "hasParent",
+    "title": "Blog Details",
+    "parentTitle": "Blog",
+    "need": true
+    } )
+
+    <section class="post posts">
+      <div class="container">
+        <div class="posts__inner">
+          <div class="posts__content">
+            <div class="post__image">
+              <img class="posts__img" src="images/posts/1.jpg" alt="bed against the background of the window">
+              <div class="posts__posted">
+                <time class="posts__date">28 JANUARY, 2020</time>
+                <span class="posts__author">By Admin</span>
+              </div>
+            </div>
+
+            <div class="post__text">
+              <h2>Fonsectetur adipisicing eiusmod</h2>
+              <p>
+                Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                venia Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              </p>
+              <p>
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet,
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+
+              <blockquote>
+                Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco labo
+                <cite>Wiusmod tempor</cite>
+              </blockquote>
+
+              <img class="post__img-left" src="images/posts/5.jpg"
+                alt="sofa and table against the background of the table">
+
+              <h3>Riusmod tempor incididunt</h3>
+              <p class="post__p">
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              </p>
+              <h3>Kajtsal jervcm eoaspckred</h3>
+              <p>
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              </p>
+            </div>
+
+            <div class="post__author author">
+              <div class="author__info">
+                <div class="author__image">
+                  <img class="author__img" src="images/posts/author/1.jpg" alt="#">
+                </div>
+
+                <div class="author__about">
+                  <span class="author__name">Mark N. Hernandez</span>
+                  <span class="author__position">Designer</span>
+                </div>
+              </div>
+
+              <div class="author__links">
+                <div class="author__tags">
+                  <span class="author__tag">Tags:</span>
+                  <a class="author__tag-link" href="#">All</a>,
+                  <a class="author__tag-link" href="#">Trending</a>
+                </div>
+
+                <div class="author__shares">
+                  <span class="author__share">Share:</span>
+                  <ul class="author__items">
+                    <li class="author__item">
+                      <a class="author__share-link" href="#">
+                        <svg class="author__icon author__icon--facebook">
+                          <use xlink:href="images/posts/sprite.svg#facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="author__item">
+                      <a class="author__share-link" href="#">
+                        <svg class="author__icon author__icon--twitter">
+                          <use xlink:href="images/posts/sprite.svg#twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="author__item">
+                      <a class="author__share-link" href="#">
+                        <svg class="author__icon author__icon--instagram">
+                          <use xlink:href="images/posts/sprite.svg#instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="author__item">
+                      <a class="author__share-link" href="#">
+                        <svg class="author__icon author__icon--google">
+                          <use xlink:href="images/posts/sprite.svg#google"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            @@include('components/posts/_comments.html')
+          </div>
+
+
+          <div class="posts__filters filters">
+            @@include('components/global/filters/_search.html')
+
+            @@include('components/global/filters/_category.html',{
+            "class": '"filters__form filters__form--posts"'
+            })
+
+            @@include('components/posts/_recent.html')
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    @@include('components/global/_partners.html',{
+    "class": '"partners partners--catalog"'
+    })
+  </main>
+
+  @@include('components/global/_footer.html',{
+  "class": '"footer__top footer__top--about"'
+  })
+
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

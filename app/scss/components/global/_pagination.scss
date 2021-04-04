@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &--posts {
+    justify-content: start;
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $button;
+    color: $title;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    &--active,
+    &:hover {
+      background-color: $button;
+      color: $main-light;
+    }
+  }
+
+  &__next {
+    width: 75px;
+  }
+}

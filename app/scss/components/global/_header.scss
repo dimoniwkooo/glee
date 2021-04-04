@@ -1,5 +1,5 @@
 .header {
-  padding: 46px 0 50px;
+  padding: 46px 0 48px;
   // min-height: 146px;
   //! display: flex; не могу растолкнуть элементы, вроде как в контейнере проблета, подскажи
   @extend %rubik-500;
@@ -127,11 +127,11 @@
     line-height: 1;
     color: $title;
     border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.5s ease, color 0.5s ease;
+    transition: border-color 0.5s ease, color 0.5s ease;
 
     &:hover {
       color: $button;
-      border-bottom-color: 1px solid $button;
+      border-color: $button;
     }
 
     @include for-desktop-up {

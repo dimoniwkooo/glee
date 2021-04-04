@@ -4,13 +4,13 @@
   line-height: 2;
 
   &__top {
-    padding: 70px 0 69px;
+    padding: 70px 0 61px;
     border-bottom: 1px solid #dae4e9;
     display: flex;
     justify-content: space-between;
 
     &--about {
-      padding: 60px 0 63px;
+      padding: 60px 0 61px;
     }
 
     @include for-desktop-up {
@@ -97,6 +97,10 @@
     color: $default-dark;
     @extend %dmsans-700;
 
+    &--news {
+      margin: 25px auto 20px;
+    }
+
     @include for-phone-only {
       margin-bottom: 5px;
     }
@@ -117,10 +121,12 @@
 
   &__link {
     color: inherit;
-    transition: color 0.5s ease;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.5s ease, color 0.5s ease;
 
     &:hover {
-      color: $main;
+      color: $default;
+      border-color: $default;
     }
   }
 
@@ -190,10 +196,12 @@
 
     &-link {
       color: inherit;
-      transition: color 0.5s ease;
+      border-bottom: 1px solid transparent;
+      transition: color 0.5s ease, background-color 0.5s ease;
 
       &:hover {
-        color: $main;
+        color: $default;
+        border-color: $default;
       }
     }
   }
@@ -202,7 +210,10 @@
 .form {
   position: relative;
   display: flex;
-  justify-content: center;
+
+  @include for-phone-only {
+    justify-content: center;
+  }
 
   &__input {
     padding: 5px 15px;
@@ -225,7 +236,7 @@
   }
 
   &__btn {
-    padding: 9px 19px;
+    padding: 8px 19px;
     line-height: 1.5;
     background-color: $button;
     color: $main-light;

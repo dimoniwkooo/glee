@@ -1,0 +1,21 @@
+.view {
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    display: flex;
+    outline: transparent;
+
+    &--active {
+      .view__icon {
+        fill: $main;
+      }
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    fill: $button;
+  }
+}

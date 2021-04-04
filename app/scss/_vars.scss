@@ -1,5 +1,6 @@
 $default: #191919;
 $default-dark: #1f2044;
+$default-dark-alt: #333333;
 $default-alt: #262626;
 $default-mod: #1a1a1a;
 $title: #436372;
@@ -17,6 +18,7 @@ $button-alt: #8b8b8b;
 $button-alt-dark: #7b7b7b;
 $button-light: #a8bfcb;
 $search: #edf1f4;
+$search-alt: #e5ecef;
 
 %checkbox-hidden{
   overflow: hidden;
@@ -38,6 +40,11 @@ $search: #edf1f4;
 
 %dmsans-700 {
   font-family: 'DMSans', sans-serif;
+  font-weight: 700;
+}
+
+%nunito-700 {
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
 }
 

@@ -1,0 +1,62 @@
+.partners {
+  background-color: $main;
+  margin: auto 0;
+  padding: 82px 0 78px;
+  position: relative;
+
+  &--about {
+    padding: 81px 0 78px;
+  }
+
+  &--catalog {
+    padding: 77px 0 78px;
+  }
+
+  &__item {
+    margin: auto 50px;
+    max-height: 170px;
+    max-width: 170px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @include for-phone-only {
+      margin: 0;
+    }
+  }
+
+  &--bg::before {
+    content: '';
+    position: absolute;
+    background-color: $main;
+    top: -183px;
+    left: 0;
+    right: 0;
+    height: 190px;
+    z-index: -1;
+
+    @include for-desktop-up {
+      top: -633px;
+      height: 635px;
+    }
+  }
+
+  &--about,
+  &--about::before,
+  &--catalog {
+    background-color: #fef7f0;
+  }
+
+  .slick-track {
+    //это решение вертикального располежения картинок, работает только вложенно
+    display: flex;
+
+    .slick-slide {
+      display: flex;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
