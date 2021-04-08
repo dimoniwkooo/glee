@@ -130,8 +130,8 @@
     transition: border-color 0.5s ease, color 0.5s ease;
 
     &:hover {
-      color: $button;
-      border-color: $button;
+      color: $default;
+      border-color: $default;
     }
 
     @include for-desktop-up {
@@ -272,8 +272,7 @@
     position: absolute;
     top: 13px;
     right: 8px;
-    width: 16px;
-    height: 16px;
+    padding: 0 5px;
     border-radius: 8px;
     font-size: 9px;
     text-align: center;
@@ -292,6 +291,6 @@
   }
 }
 
-.over.active {
+body.active {
   overflow-y: hidden;
 }

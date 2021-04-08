@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/global/_head.html',
+{
+"name": "Contact"
+})
+
+<body>
+  @@include('components/global/_header.html')
+
+  <main class="main">
+    @@include('components/global/_top.html',
+    {
+    "title": "Contact",
+    "need": false
+    } )
+
+    <section class="contact">
+      <div class="container">
+        <span class="contact__preview">Write Here</span>
+        <h2 class="contact__title">
+          Get In Touch
+        </h2>
+
+        <ul class="contact__items">
+          @@loop('components/contact/_contact-item.html',[
+          {
+          "class":"address",
+          "title": "Address"
+          },
+          {
+          "class":"email",
+          "title": "Our Email"
+          },
+          {
+          "class":"phone",
+          "title": "Our Phone"
+          },
+          ])
+        </ul>
+
+        <div class="contact__box">
+          <div class="contact__message message">
+            @@include('components/global/_message.html',
+            {
+            "mail":"email",
+            "area":"message",
+            "btn":"Send message"
+            })
+          </div>
+
+          <div class="contact__map" id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    @@include('components/global/blog/_blog.html')
+
+    @@include('components/global/partners/_partners.html',
+    {
+    "class": '"partners partners--about partners--bg"'
+    })
+  </main>
+
+  @@include('components/global/_footer.html',
+  {
+  "class": '"footer__top footer__top--about"'
+  })
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
+  <script>
+    let map
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 29.77002326308306, lng: -95.27845135442155 },
+        zoom: 11,
+      })
+    }
+  </script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

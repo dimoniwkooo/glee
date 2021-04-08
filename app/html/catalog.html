@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glee | Product list</title>
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
+@@include('components/global/_head.html',
+{
+"name": "Product list"
+})
 
-<body class="over">
+<body>
   @@include('components/global/_header.html')
 
   <main class="main">
-    @@include('components/global/_top.html',{
+    @@include('components/global/_top.html',
+    {
     "title": "Product list",
     "need": false
     })
@@ -25,7 +22,8 @@
           <h2 class="sr-only">this is catalog page with products card</h2>
 
           <div class="catalog__filters filters">
-            @@include('components/global/filters/_category.html',{
+            @@include('components/global/filters/_category.html',
+            {
             "class": '"filters__form"'
             })
 
@@ -48,59 +46,21 @@
               <h3 class="filters__title">Recent products</h3>
 
               <ul class="recent">
-                <li class="recent__item">
-                  <a class="recent__link" href="#">
-                    <div class="recent__image">
-                      <img class="recent__img" src="images/catalog/recent/1.jpg" alt="triangular black lamp">
-                    </div>
-
-                    <div class="recent__content">
-                      <h4 class="recent__name">Pendant lamp</h4>
-                      <div class="recent__rate" data-rateyo-rating="4"></div>
-                      <span class="recent__price">23$</span>
-                    </div>
-                  </a>
-                </li>
-
-                <li class="recent__item">
-                  <a class="recent__link" href="#">
-                    <div class="recent__image">
-                      <img class="recent__img" src="images/catalog/recent/2.jpg" alt="triangular black lamp">
-                    </div>
-
-                    <div class="recent__content">
-                      <h4 class="recent__name">Pendant lamp</h4>
-                      <div class="recent__rate" data-rateyo-rating="4"></div>
-                      <span class="recent__price">23$</span>
-                    </div>
-                  </a>
-                </li>
-
-                <li class="recent__item">
-                  <a class="recent__link" href="#">
-                    <div class="recent__image">
-                      <img class="recent__img" src="images/catalog/recent/3.jpg" alt="triangular black lamp">
-                    </div>
-
-                    <div class="recent__content">
-                      <h4 class="recent__name">Pendant lamp</h4>
-                      <div class="recent__rate" data-rateyo-rating="4"></div>
-                      <span class="recent__price">23$</span>
-                    </div>
-                  </a>
-                </li>
+                @@loop('components/global/_recent.html','components/json/catalog/recent.json')
               </ul>
             </div>
 
             <div class="view">
               View
               <button class="view__btn view__btn--grid view__btn--active">
+                <span class="sr-only">display of products in a grid</span>
                 <svg class="view__icon">
                   <use xlink:href="images/icons/sprite.svg#grid"></use>
                 </svg>
               </button>
 
               <button class="view__btn view__btn--list">
+                <span class="sr-only">display of products in the list</span>
                 <svg class="view__icon">
                   <use xlink:href="images/icons/sprite.svg#grid-record"></use>
                 </svg>
@@ -110,116 +70,11 @@
 
           <div class="catalog__content">
             <ul class="catalog__items">
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Wooden chair",
-                "cost": "$29.00",
-                "src": "wooden-radio.png",
-                "alt": '"A soft chair"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "White chair",
-                "cost": "$29.00",
-                "src": "wooden-chair.png",
-                "alt": '"soft chair on wooden legs"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Retro table",
-                "cost": "$29.00",
-                "src": "white-chair.png",
-                "alt": '"soft chair on wooden short legs"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Wooden chair",
-                "cost": "$29.00",
-                "src": "retro-table.png",
-                "alt": '"soft chair on wooden short legs with pillow"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "White chair",
-                "cost": "$29.00",
-                "src": "wooden-radio-alt.png",
-                "alt": '"soft chair on wooden short legs"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Retro table",
-                "cost": "$29.00",
-                "src": "retro-table.png",
-                "alt": '"soft chair on wooden short legs with pillow"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Wooden chair",
-                "cost": "$29.00",
-                "src": "wooden-chair-alt.png",
-                "alt": '"upholstered chair on a cylindrical leg"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "White chair",
-                "cost": "$29.00",
-                "src": "white-chair-alt.png",
-                "alt": '"round padded ottoman"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Retro table",
-                "cost": "$29.00",
-                "src": "retro-table-alt.png",
-                "alt": '"square padded ottoman"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Wooden chair",
-                "cost": "$29.00",
-                "src": "wooden-chair-sec.png",
-                "alt": '"upholstered chair on a cylindrical leg"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "White chair",
-                "cost": "$29.00",
-                "src": "white-chair-sec.png",
-                "alt": '"round padded ottoman"'
-                })
-              </li>
-
-              <li class="catalog__item">
-                @@include('components/global/_product.html', {
-                "name": "Retro table",
-                "cost": "$29.00",
-                "src": "retro-table-sec.png",
-                "alt": '"square padded ottoman"'
-                })
-              </li>
+              @@loop('components/global/_product.html','components/json/catalog/product.json')
             </ul>
 
-            @@include('components/global/_pagination.html',{
+            @@include('components/global/_pagination.html',
+            {
             "class": '"pagination"'
             })
           </div>
@@ -227,12 +82,14 @@
       </div>
     </section>
 
-    @@include('components/global/_partners.html',{
+    @@include('components/global/partners/_partners.html',
+    {
     "class": '"partners partners--catalog"'
     })
   </main>
 
-  @@include('components/global/_footer.html',{
+  @@include('components/global/_footer.html',
+  {
   "class": '"footer__top footer__top--about"'
   })
 

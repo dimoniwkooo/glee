@@ -36,7 +36,7 @@
 
   &__text {
     color: $title-alt;
-    margin-bottom: 30px;
+    margin-bottom: 34px;
 
     @include line-clamp($lines-to-show: 9);
 

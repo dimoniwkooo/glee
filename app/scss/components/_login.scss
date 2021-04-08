@@ -1,0 +1,109 @@
+.login {
+  padding: 110px 0 120px;
+
+  @include for-tablet-landscape-up {
+    padding: 50px 0;
+  }
+
+  &__form {
+    margin: 0 auto;
+    max-width: 470px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 23px;
+    font-size: 14px;
+    line-height: 2.3;
+    color: $title;
+
+    &--password {
+      margin-bottom: 38px;
+    }
+
+    &--checkbox {
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    margin-top: 5px;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    outline-color: $title-alt;
+  }
+
+  &__btn {
+    padding: 11px;
+    font-size: 18px;
+    background-color: $button;
+    color: #fffefe;
+    margin-bottom: 25px;
+    @extend %rubik-500;
+  }
+
+  &__setting {
+    padding-bottom: 24px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f6f6f6;
+  }
+
+  &__check {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+
+    &:checked + .login__checkbox {
+      background-image: url('../../images/icons/check.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &__checkbox {
+    margin-top: 10px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #ebebeb;
+    border-radius: 2px;
+  }
+
+  &__remember {
+    margin-left: 25px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: $title;
+    display: inline-block;
+    transition: color 0.5s ease, font-weight 0.5s ease;
+
+    &--problem {
+      margin: 0 auto 21px;
+    }
+
+    &:hover {
+      color: $default;
+      @extend %rubik-500;
+    }
+  }
+
+  &__create-btn {
+    padding: 11px 10px;
+    border: 2px solid $button;
+    font-size: 18px;
+    color: $title-alt;
+    @extend %rubik-500;
+  }
+}

@@ -18,7 +18,7 @@
   }
 
   &__item {
-    padding: 28px 0;
+    padding: 26px 0;
     display: flex;
 
     &--reply {
@@ -45,7 +45,7 @@
 
   &__img {
     height: 100px;
-    width: 100px;
+    max-width: 100px;
     object-fit: cover;
     margin-right: 30px;
 
@@ -99,111 +99,5 @@
     width: 14px;
     fill: #526278;
     transition: fill 0.5s ease;
-  }
-
-  &__inputs {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 25px;
-    margin-bottom: 20px;
-
-    @include for-tablet-portrait-up {
-      flex-wrap: wrap;
-      row-gap: 20px;
-    }
-  }
-
-  &__input,
-  &__textarea {
-    border: 1px solid #e5e5e5;
-    transition: border-color 0.5s ease;
-
-    &::placeholder {
-      line-height: 2.3;
-      color: #999999;
-    }
-
-    &:focus {
-      border-color: $button;
-      outline: none;
-    }
-  }
-
-  &__input {
-    width: 100%;
-    padding: 10px 42px 10px 17px;
-  }
-
-  &__textarea {
-    padding: 7px 43px 7px 18px;
-    margin-bottom: 30px;
-    height: 120px;
-    width: 100%;
-    resize: none;
-  }
-
-  &__box-name,
-  &__box-mail {
-    max-width: 400px;
-    width: 100%;
-
-    @include for-tablet-portrait-up {
-      max-width: 100%;
-    }
-  }
-
-  &__box-name,
-  &__box-mail,
-  &__box-comment {
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-  }
-
-  &__box-name::after {
-    height: 14px;
-    width: 14px;
-    background-image: url('../../images/posts/icons/user.svg');
-  }
-
-  &__box-mail::after {
-    height: 13px;
-    width: 18px;
-    background-image: url('../../images/posts/icons/mail.svg');
-  }
-
-  &__box-comment::after {
-    top: 18px;
-    transform: none;
-    height: 15px;
-    width: 18px;
-    background-image: url('../../images/posts/icons/comment.svg');
-  }
-
-  &__btn {
-    padding: 12px 40px;
-    font-size: 14px;
-    line-height: 1.5;
-    text-transform: uppercase;
-    color: $main-light;
-    background-color: $button;
-    border: 1px solid transparent;
-    @extend %rubik-400;
-    transition: all 0.5s ease;
-
-    &:hover {
-      color: $button;
-      background-color: $main-light;
-      border-color: $button;
-    }
   }
 }

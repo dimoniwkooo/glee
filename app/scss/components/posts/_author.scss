@@ -6,16 +6,18 @@
   border-top: 2px solid #ebebeb;
   border-bottom: 2px solid #ebebeb;
 
-  @include for-tablet-portrait-up{
+  @include for-tablet-portrait-up {
     flex-wrap: wrap;
     gap: 25px;
   }
 
-  @include for-phone-only{
+  @include for-phone-only {
     justify-content: center;
   }
 
-  &__info {
+  &__info,
+  &__shares,
+  &__items {
     display: flex;
   }
 
@@ -81,14 +83,6 @@
     flex-direction: column;
     justify-content: center;
     margin-right: 25px;
-  }
-
-  &__shares {
-    display: flex;
-  }
-
-  &__items {
-    display: flex;
   }
 
   &__item {

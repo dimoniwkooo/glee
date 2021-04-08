@@ -1,0 +1,26 @@
+[
+  {
+    "class": "post",
+    "name": "Corem ipsum dolor tetur adipisicing elit",
+    "src": "posts/recent/1.jpg",
+    "alt": "beige kitchen"
+  },
+  {
+    "class": "post",
+    "name": "Fdipisicing elit, sed do eiusmod tempor",
+    "src": "posts/recent/2.jpg",
+    "alt": "white kitchen"
+  },
+  {
+    "class": "post",
+    "name": "Eonsectetur adipisicing elit, sed do eiusmod",
+    "src": "posts/recent/3.jpg",
+    "alt": "white kitchen"
+  },
+  {
+    "class": "post",
+    "name": "gnim ad minim veniam, quis nostrud",
+    "src": "posts/recent/4.jpg",
+    "alt": "white hallway"
+  }
+]

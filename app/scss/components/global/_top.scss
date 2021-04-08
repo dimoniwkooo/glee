@@ -20,9 +20,10 @@
 .breadcrumbs {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
   &__items {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {

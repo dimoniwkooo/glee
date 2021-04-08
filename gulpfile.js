@@ -38,6 +38,7 @@ function styles() {
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
     'node_modules/rateyo/src/jquery.rateyo.css',
     'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
     'app/scss/style.scss',
   ])
     .pipe(scss({ outputStyle: 'compressed' }))
@@ -60,6 +61,7 @@ function scripts() {
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
     'node_modules/rateyo/src/jquery.rateyo.js',
     'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
     'app/js/main.js',
   ])
     .pipe(concat('main.min.js'))
@@ -75,18 +77,23 @@ function images() {
         imagemin.gifsicle({ interlaced: true }),
         imagemin.mozjpeg({ quality: 75, progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
       ])
     )
     .pipe(dest('dist/images'))
 }
 
 function build() {
-  return src(['app/**/*.html', 'app/css/style.min.css', 'app/js/main.min.js'], {
-    base: 'app',
-  }).pipe(dest('dist'))
+  return src(
+    [
+      'app/*.html',
+      'app/css/style.min.css',
+      'app/js/main.min.js',
+      'app/fonts/**/*.*',
+    ],
+    {
+      base: 'app',
+    }
+  ).pipe(dest('dist'))
 }
 
 function cleanDist() {

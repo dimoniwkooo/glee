@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glee | Blog details</title>
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
+@@include('components/global/_head.html',
+{
+"name": "Blog details"
+})
 
 <body class="over">
   @@include('components/global/_header.html')
 
   <main class="main">
-    @@include('components/global/_top.html', {
-    "name": "hasParent",
+    @@include('components/global/_top.html',
+    {
     "title": "Blog Details",
     "parentTitle": "Blog",
     "need": true
@@ -36,8 +32,10 @@
             <div class="post__text">
               <h2>Fonsectetur adipisicing eiusmod</h2>
               <p>
-                Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                venia Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                <strong>
+                  Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  venia Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                </strong>
               </p>
               <p>
                 consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -48,8 +46,10 @@
               </p>
 
               <blockquote>
-                Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco labo
+                <p>
+                  Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco labo
+                </p>
                 <cite>Wiusmod tempor</cite>
               </blockquote>
 
@@ -90,37 +90,12 @@
                 <div class="author__shares">
                   <span class="author__share">Share:</span>
                   <ul class="author__items">
-                    <li class="author__item">
-                      <a class="author__share-link" href="#">
-                        <svg class="author__icon author__icon--facebook">
-                          <use xlink:href="images/posts/sprite.svg#facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-
-                    <li class="author__item">
-                      <a class="author__share-link" href="#">
-                        <svg class="author__icon author__icon--twitter">
-                          <use xlink:href="images/posts/sprite.svg#twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-
-                    <li class="author__item">
-                      <a class="author__share-link" href="#">
-                        <svg class="author__icon author__icon--instagram">
-                          <use xlink:href="images/posts/sprite.svg#instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-
-                    <li class="author__item">
-                      <a class="author__share-link" href="#">
-                        <svg class="author__icon author__icon--google">
-                          <use xlink:href="images/posts/sprite.svg#google"></use>
-                        </svg>
-                      </a>
-                    </li>
+                    @@loop('components/posts/_author.html', [
+                    {"name":"facebook"},
+                    {"name":"twitter"},
+                    {"name":"instagram"},
+                    {"name":"google"},
+                    ])
                   </ul>
                 </div>
               </div>
@@ -133,23 +108,31 @@
           <div class="posts__filters filters">
             @@include('components/global/filters/_search.html')
 
-            @@include('components/global/filters/_category.html',{
+            @@include('components/global/filters/_category.html',
+            {
             "class": '"filters__form filters__form--posts"'
             })
 
-            @@include('components/posts/_recent.html')
+            <div class="posts__recent">
+              <h3 class="filters__title">Recent posts</h3>
+
+              <ul class="recent">
+                @@loop('components/global/_recent.html','components/json/posts/recent.json')
+              </ul>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    @@include('components/global/_partners.html',{
+    @@include('components/global/partners/_partners.html',
+    {
     "class": '"partners partners--catalog"'
     })
   </main>
 
-  @@include('components/global/_footer.html',{
+  @@include('components/global/_footer.html',
+  {
   "class": '"footer__top footer__top--about"'
   })
 

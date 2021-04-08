@@ -1,0 +1,18 @@
+<li class="recent__item">
+  <a class="recent__link" href="#">
+    <div class="recent__image">
+      <img class="recent__img" src="images/@@src" alt="@@alt">
+    </div>
+
+    <div class="recent__content">
+      <h4 class="recent__name">@@name</h4>
+      @@if (context.class === 'catalog') {
+      <div class="recent__rate" data-rateyo-rating="4"></div>
+      <span class="recent__price">23$</span>
+      }
+      @@if (context.class === 'post') {
+      <time class="recent__date">28 JANUARY, 2020</time>
+      }
+    </div>
+  </a>
+</li>

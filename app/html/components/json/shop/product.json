@@ -1,0 +1,50 @@
+[
+  {
+    "class": "related__item",
+    "name": "Wooden radio",
+    "src": "wooden-radio.png",
+    "alt": "A soft chair"
+  },
+  {
+    "class": "related__item",
+    "name": "Wooden chair",
+    "src": "wooden-chair.png",
+    "alt": "soft chair on wooden legs"
+  },
+  {
+    "class": "related__item",
+    "name": "White radio",
+    "src": "white-chair.png",
+    "alt": "soft chair on wooden short legs"
+  },
+  {
+    "class": "related__item",
+    "name": "Retro table",
+    "src": "retro-table.png",
+    "alt": "soft chair on wooden short legs with pillow"
+  },
+  {
+    "class": "related__item",
+    "name": "Wooden radio",
+    "src": "wooden-radio-alt.png",
+    "alt": "soft chair on wooden short legs"
+  },
+  {
+    "class": "related__item",
+    "name": "Wooden chair",
+    "src": "wooden-chair-alt.png",
+    "alt": "upholstered chair on a cylindrical leg"
+  },
+  {
+    "class": "related__item",
+    "name": "White chair",
+    "src": "white-chair-alt.png",
+    "alt": "round padded ottoman"
+  },
+  {
+    "class": "related__item",
+    "name": "Retro table",
+    "src": "retro-table-alt.png",
+    "alt": "square padded ottoman"
+  }
+]

@@ -1,58 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glee | Home page</title>
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
+@@include('components/global/_head.html',
+{
+"name": "Home page"
+})
 
-<body class="over">
+<body>
   @@include('components/global/_header.html')
 
   <main class="main">
+    <h1 class="sr-only">online furniture store glee</h1>
     <section class="slider">
       <h2 class="sr-only">where you can see the trends of our store</h2>
       <div class="container container--lg">
         <ul class="slider__items">
-          @@include('components/index/_slider.html')
+          @@for (var i = 0; i < 3; i++) { @@include('components/index/_slider.html') } </ul>
 
-          @@include('components/index/_slider.html')
-
-          @@include('components/index/_slider.html')
-        </ul>
-
-        <ul class="services">
-          <li class="services__item services__item--support">
-            <h3 class="services__title">Support 24/7.</h3>
-            <div class="services__text">
-              <p>
-                Contact us 24 hours a day,
-                7 days a week.
-              </p>
-            </div>
-          </li>
-
-          <li class="services__item services__item--delivery">
-            <h3 class="services__title">Delivery.</h3>
-            <div class="services__text">
-              <p>Free shipping on all US order.</p>
-            </div>
-          </li>
-
-          <li class="services__item services__item--payment">
-            <h3 class="services__title">100% Payment secure.</h3>
-            <div class="services__text">
-              <p>
-                We ensure secure payment
-                with PEV.
-              </p>
-            </div>
-          </li>
-        </ul>
+            <ul class="services">
+              @@loop('components/index/_service.html', [
+              {
+              "class": "services__item services__item--support",
+              "name": "Support 24/7.",
+              "text": "Contact us 24 hours a day, 7 days a week."
+              },
+              {
+              "class": "services__item services__item--delivery",
+              "name": "Delivery.",
+              "text":"Free shipping on all US order."
+              },
+              {
+              "class": "services__item services__item--payment",
+              "name": "100% Payment secure.",
+              "text":"We ensure secure payment with PEV."
+              },
+              ])
+            </ul>
       </div>
     </section>
 
@@ -60,104 +43,19 @@
       <div class="container">
         <h2 class="products__title">Products of the week</h2>
 
-        @@include('components/index/_filter.html',{
+        @@include('components/index/_filter.html',
+        {
         "class": '"filter__btn filter-1"'
         })
 
         <ul class="products__items">
-          <li class="products__item mix category-f">
-            @@include('components/global/_product.html', {
-            "name": "Wooden radio",
-            "cost": "$29.00",
-            "src": "wooden-radio.png",
-            "alt": '"A soft chair"'
-            })
-          </li>
-
-          <li class="products__item mix category-c">
-            @@include('components/global/_product.html', {
-            "name": "Wooden chair",
-            "cost": "$29.00",
-            "src": "wooden-chair.png",
-            "alt": '"soft chair on wooden legs"'
-            })
-          </li>
-
-          <li class="products__item mix category-c">
-            @@include('components/global/_product.html', {
-            "name": "White chair",
-            "cost": "$29.00",
-            "src": "white-chair.png",
-            "alt": '"soft chair on wooden short legs"'
-            })
-          </li>
-
-          <li class="products__item mix category-l">
-            @@include('components/global/_product.html', {
-            "name": "Retro table",
-            "cost": "$29.00",
-            "src": "retro-table.png",
-            "alt": '"soft chair on wooden short legs with pillow"'
-            })
-          </li>
-
-          <li class="products__item mix category-f">
-            @@include('components/global/_product.html', {
-            "name": "Wooden radio",
-            "cost": "$29.00",
-            "src": "wooden-radio-alt.png",
-            "alt": '"soft chair on wooden short legs"'
-            })
-          </li>
-
-          <li class="products__item mix category-c">
-            @@include('components/global/_product.html', {
-            "name": "Wooden chair",
-            "cost": "$29.00",
-            "src": "wooden-chair-alt.png",
-            "alt": '"upholstered chair on a cylindrical leg"'
-            })
-          </li>
-
-          <li class="products__item mix category-c">
-            @@include('components/global/_product.html', {
-            "name": "White chair",
-            "cost": "$29.00",
-            "src": "white-chair-alt.png",
-            "alt": '"round padded ottoman"'
-            })
-          </li>
-
-          <li class="products__item mix category-d">
-            @@include('components/global/_product.html', {
-            "name": "Retro table",
-            "cost": "$29.00",
-            "src": "retro-table-alt.png",
-            "alt": '"square padded ottoman"'
-            })
-          </li>
+          @@loop('components/global/_product.html','components/json/index/product.json')
         </ul>
       </div>
 
       <div class="container container--lg">
         <ul class="products__cards">
-          <li class="products__cards-item">
-            @@include('components/index/_product-card.html', {
-            "name": "Mirum Notare Tellus",
-            "text": "LEDCornBulb Lamp 5W 7W 10W 12W 15W E26 E27LEDCornLight",
-            "src": "lamp.png",
-            "alt": '"Black lamp with two puma"'
-            })
-          </li>
-
-          <li class="products__cards-item">
-            @@include('components/index/_product-card.html', {
-            "name": "Malesuada Tempor Euismod",
-            "text": "50W 8000lm Compact Size for HID StreetLightReplacementLEDCornLight",
-            "src": "floor-lamp.png",
-            "alt": '"Black floor lamp on three legs"'
-            })
-          </li>
+          @@loop('components/index/_product-card.html', 'components/json/index/product-card.json')
         </ul>
       </div>
     </section>
@@ -166,73 +64,15 @@
       <div class="container">
         <h2 class="design__title">New Design</h2>
 
-        @@include('components/index/_filter.html',{
+        @@include('components/index/_filter.html',
+        {
         "class": '"filter__btn filter-2"'
         })
 
         <ul class="design__items">
-          <li class="design__item mix category-f">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Beat Flat Pendant Black</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/1.png" alt="sofa with three pillows">
-            </div>
-          </li>
-
-          <li class="design__item mix category-c">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Lampe Sur Pieds Bamboo</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/2.png" alt="double bed with two pillows">
-            </div>
-          </li>
-
-          <li class="design__item mix category-l">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Rattan Rocking Chair</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/3.png" alt="black leather office chair">
-            </div>
-          </li>
-
-          <li class="design__item mix category-d">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Rattan Rocking Chair</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/4.png" alt="double bed with two pillows and high walls">
-            </div>
-          </li>
-
-          <li class="design__item mix category-f">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Rattan Rocking Chair</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/5.png" alt="beige leather office chair">
-            </div>
-          </li>
-
-          <li class="design__item mix category-f">
-            <h3 class="design__subtitle">
-              <a class="design__link" href="#">Lampe Sur Pieds Bamboo</a>
-            </h3>
-            <span class="design__style">Classic</span>
-            <div class="design__image">
-              <img class="design__img" src="images/index/design/6.png" alt="sofa with two pillows">
-            </div>
-          </li>
+          @@loop('components/index/_design.html', 'components/json/index/design.json')
         </ul>
       </div>
-
 
       <a class="video" data-fancybox href="https://www.youtube.com/watch?v=e2hBvHFtzHA"
         style="background-image: url(images/index/video/video-bg.jpg)">
@@ -243,15 +83,16 @@
       </a>
     </section>
 
+    @@include('components/global/blog/_blog.html')
 
-    @@include('components/global/_blog.html')
-
-    @@include('components/global/_partners.html',{
+    @@include('components/global/partners/_partners.html',
+    {
     "class": '"partners partners--bg"'
     })
   </main>
 
-  @@include('components/global/_footer.html',{
+  @@include('components/global/_footer.html',
+  {
   "class": '"footer__top"'
   })
 

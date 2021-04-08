@@ -115,16 +115,9 @@
 
       &__shop {
         margin-right: 11px;
-        background-color: $button;
-        fill: $search-alt;
-        transition: background-color 0.5s ease;
-
-        &:hover {
-          background-color: $search-alt;
-          fill: $button;
-        }
       }
 
+      &__shop,
       &__favorite {
         background-color: $main-light;
         fill: #a6bdca;

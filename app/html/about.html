@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glee | About us</title>
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
+@@include('components/global/_head.html',
+{
+"name": "About us"
+})
 
-<body class="over">
+<body>
   @@include('components/global/_header.html')
 
   <main class="main">
-    @@include('components/global/_top.html',{
+    @@include('components/global/_top.html',
+    {
     "title": "About Us",
     "need": false
     })
@@ -117,42 +114,39 @@
           </div>
 
           <ul class="team__items">
-            @@include('components/about/_team.html',{
+            @@loop('components/about/_team.html',[
+            {
             "name":"Eliza Elliot",
-            "src":"1.jpg",
-            "alt":'"photo Eliza Elliot"'
-            })
-
-            @@include('components/about/_team.html',{
+            "src":"1.jpg"
+            },
+            {
             "name":"Roscoe A.",
-            "src":"2.jpg",
-            "alt":'"photo Roscoe A."'
-            })
-
-            @@include('components/about/_team.html',{
+            "src":"2.jpg"
+            },
+            {
             "name":"Ruby M.",
-            "src":"3.jpg",
-            "alt":'"photo Ruby M."'
-            })
-
-            @@include('components/about/_team.html',{
+            "src":"3.jpg"
+            },
+            {
             "name":"Marie F. Bloss",
-            "src":"4.jpg",
-            "alt":'"photo Marie F. Bloss"'
-            })
+            "src":"4.jpg"
+            }
+            ])
           </ul>
         </div>
       </div>
     </section>
 
-    @@include('components/global/_blog.html')
+    @@include('components/global/blog/_blog.html')
 
-    @@include('components/global/_partners.html',{
+    @@include('components/global/partners/_partners.html',
+    {
     "class": '"partners partners--bg partners--about"'
     })
   </main>
 
-  @@include('components/global/_footer.html',{
+  @@include('components/global/_footer.html',
+  {
   "class": '"footer__top footer__top--about"'
   })
 

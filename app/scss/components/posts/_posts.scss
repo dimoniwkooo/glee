@@ -1,12 +1,29 @@
 .posts {
-  padding-bottom: 120px;
+  .recent {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 9px;
+      }
+    }
+
+    &__content{
+      padding: 0 5px 0;
+    }
+
+    &__name{
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+  }
+
+  padding: 120px 0;
 
   @include for-tablet-landscape-up {
     padding-bottom: 50px;
   }
 
   &__inner {
-    padding: 120px 0 77px;
+    margin-bottom: 77px;
     display: flex;
     justify-content: space-between;
 
@@ -50,11 +67,11 @@
   &__image {
     position: relative;
     margin-bottom: 37px;
+    min-height: 500px;
+    max-width: 830px;
   }
 
   &__img {
-    min-height: 500px;
-    max-width: 830px;
     width: 100%;
     object-fit: cover;
 
@@ -69,6 +86,10 @@
     left: 0;
     background-color: $button;
     padding: 18px 28px 22px;
+
+    @include for-phone-only {
+      width: 100%;
+    }
   }
 
   &__date,
@@ -104,25 +125,26 @@
   }
 
   &__title {
-    margin-bottom: 20px;
-    padding-bottom: 7px;
+    margin-bottom: 23px;
+    padding-bottom: 4px;
     font-size: 36px;
     line-height: 1;
     color: $default-dark-alt;
     @extend %rubik-400;
+    @include line-clamp(1);
 
-    @include line-clamp(3);
-
-    @include for-tablet-portrait-up{
+    @include for-tablet-portrait-up {
       font-size: 24px;
     }
   }
 
-  &__text p {
-    color: $title-alt;
+  &__text {
     margin-bottom: 36px;
+    color: $title-alt;
 
-    @include line-clamp(6);
+    p {
+      @include line-clamp(6);
+    }
   }
 
   &__link {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/global/_head.html',
+{
+"name": "Log in"
+})
+
+<body>
+  @@include('components/global/_header.html')
+
+  <main class="main">
+    @@include('components/global/_top.html',
+    {
+    "title": "Log in",
+    "need": false
+    } )
+
+    <section class="login">
+      <div class="container">
+
+        <form class="login__form" action="#">
+          <label class="login__label">
+            Username or email address *
+            <input class="login__input" type="text" required>
+          </label>
+
+          <label class="login__label login__label--password">
+            Password *
+            <input class="login__input" type="password" required>
+          </label>
+
+          <button class="login__btn" type="submit">Login</button>
+          <div class="login__setting">
+            <label class="login__label login__label--checkbox">
+              <div class="login__box">
+                <input class="login__check" type="checkbox">
+                <span class="login__checkbox"></span>
+              </div>
+
+              <span class="login__remember">Remember me</span>
+            </label>
+
+            <a class="login__link" href="#">Lost your password?</a>
+          </div>
+
+          <a class="login__link login__link--problem" href="#">Not registered? No problem</a>
+
+          <button class="login__create-btn" type="submit">Create an account</button>
+        </form>
+      </div>
+    </section>
+
+    @@include('components/global/partners/_partners.html',
+    {
+    "class": '"partners partners--about partners--catalog"'
+    })
+  </main>
+
+  @@include('components/global/_footer.html',
+  {
+  "class": '"footer__top footer__top--about"'
+  })
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,23 @@
 $(function () {
+  function toggleSidebar() {
+    $('.burger').toggleClass('active')
+    $('.menu__items').toggleClass('active')
+    $('.over').toggleClass('active')
+  }
+
+  $('.burger').on('click tap', toggleSidebar)
+
+  $('.shop__tab').on('click', function (e) {
+    e.preventDefault()
+    $('.shop__tab').removeClass('shop__tab--active')
+    $(this).addClass('shop__tab--active')
+
+    $('.shop__list').removeClass('shop__list--active')
+    $($(this).attr('href')).addClass('shop__list--active')
+  })
+
+  $('.shop__count').styler()
+
   $('.view__btn').on('click', function () {
     $('.view__btn').removeClass('view__btn--active')
     $(this).addClass('view__btn--active')
@@ -36,7 +55,7 @@ $(function () {
     readOnly: true,
   })
 
-  $('.product__rate').rateYo({
+  $('.shop__rate').rateYo({
     starWidth: '18px',
     ratedFill: '#ffcc00',
     normalFill: '#d6d6d6',
@@ -44,13 +63,13 @@ $(function () {
     readOnly: true,
   })
 
-  function toggleSidebar() {
-    $('.burger').toggleClass('active')
-    $('.menu__items').toggleClass('active')
-    $('.over').toggleClass('active')
-  }
-
-  $('.burger').on('click tap', toggleSidebar)
+  $('.product__rate').rateYo({
+    starWidth: '18px',
+    ratedFill: '#ffcc00',
+    normalFill: '#d6d6d6',
+    spacing: '13px',
+    readOnly: true,
+  })
 
   $('.slider__items').slick({
     dots: true,
@@ -87,6 +106,60 @@ $(function () {
       },
       {
         breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  })
+
+  $('.slide__small').slick({
+    asNavFor: '.slide__big',
+    focusOnSelect: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    vertical: true,
+    draggable: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          vertical: false,
+        },
+      },
+    ],
+  })
+  $('.slide__big').slick({
+    asNavFor: '.slide__small',
+    draggable: false,
+    arrows: false,
+    fade: true,
+  })
+
+  $('.related__items').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    appendArrows: '.related__button',
+    prevArrow:
+      '<button class="related__btn related__btn--prev slick-prev" type="button"></button>',
+    nextArrow:
+      '<button class="related__btn related__btn--next slick-next" type="button"></button>',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
         },

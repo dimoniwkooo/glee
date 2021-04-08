@@ -1,0 +1,147 @@
+.shop {
+  padding: 120px 0 0;
+
+  @include for-tablet-landscape-up {
+    padding: 50px 0 0;
+  }
+
+  + .blog {
+    padding-top: 50px;
+  }
+
+  &__inner {
+    display: flex;
+    margin-bottom: 100px;
+
+    @include for-tablet-landscape-up{
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__slide {
+    max-width: 550px;
+    width: 100%;
+  }
+
+  &__content {
+    padding-top: 25px;
+    max-width: 570px;
+    width: 100%;
+
+    @include for-tablet-landscape-up{
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    font-size: 40px;
+    line-height: 1;
+    color: $default-dark-alt;
+    @extend %rubik-400;
+  }
+
+  &__rate {
+    margin-bottom: 29px;
+  }
+
+  &__price {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 1.5;
+    color: $default-dark-alt;
+  }
+
+  &__text {
+    color: $title-alt;
+    margin-bottom: 29px;
+  }
+
+  &__btn {
+    margin-left: 11px;
+    margin-bottom: 50px;
+    padding: 9px 54px;
+    font-size: 15px;
+    line-height: 2;
+    text-transform: uppercase;
+    color: $main-light;
+    background-color: $button;
+    border-radius: 5px;
+
+    @include for-desktop-up{
+      margin-left: 0;
+    }
+  }
+
+  &__name {
+    color: $title-alt;
+
+    &--upper {
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    color: $title-alt;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $default;
+      border-color: $default;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    margin: 0 92px 31px 0;
+
+    @include for-tablet-landscape-up {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 13px;
+
+      @include for-tablet-landscape-up {
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 113px;
+  }
+
+  &__tab {
+    display: block;
+    width: 241px;
+    padding: 7px 10px;
+    font-size: 18px;
+    line-height: 2.2;
+    text-align: center;
+    color: $button;
+    border-radius: 5px;
+    background-color: #edf1f4;
+
+    &--active {
+      background-color: $button;
+      color: $main-light;
+    }
+  }
+
+  &__list {
+    display: none;
+    color: $title-alt;
+
+    &--active {
+      display: block;
+    }
+  }
+}

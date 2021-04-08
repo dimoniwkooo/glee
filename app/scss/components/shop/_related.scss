@@ -1,0 +1,79 @@
+.related {
+  .slick-slide {
+    margin: 20px 15px 50px;
+    outline: transparent;
+  }
+
+  .slick-list {
+    margin: 0 -15px;
+    border-radius: 10px;
+  }
+
+  &__subtitle {
+    padding-top: 5px;
+    font-size: 36px;
+    line-height: 1;
+    color: $title-alt;
+    @extend %dmsans-700;
+
+    @include for-tablet-portrait-up{
+      font-size: 24px;
+    }
+  }
+
+  &__item {
+    height: 392px;
+    width: 270px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @include for-tablet-portrait-up {
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border: 2px solid $search;
+    border-radius: 5px;
+    outline-color: $button;
+
+    &--prev {
+      margin-right: 20px;
+    }
+
+    &--prev::before,
+    &--next::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 22px;
+      height: 9px;
+      transform: translate(-50%, -50%);
+      background-image: url('../../images/shop/slider-arrow.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--next::before {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}
+
+// .product__lists {
+//   // display: contents;
+//   opacity: 1 !important;
+// }

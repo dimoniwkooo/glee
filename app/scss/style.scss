@@ -13,6 +13,7 @@
 @import 'components/global/product';
 @import 'components/global/filters';
 @import 'components/global/recent';
+@import 'components/global/message';
 
 @import 'components/index/slider';
 @import 'components/index/services';
@@ -34,3 +35,12 @@
 @import 'components/posts/post';
 @import 'components/posts/author';
 @import 'components/posts/comments';
+
+@import 'components/shop/shop';
+@import 'components/shop/slide';
+@import 'components/shop/related';
+@import 'components/shop/jq-number';
+
+@import 'components/login';
+@import 'components/terms';
+@import 'components/contact';

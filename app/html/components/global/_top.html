@@ -8,7 +8,7 @@
           <a class="breadcrumbs__link" href="#">Home</a>
         </li>
 
-        @@if (name === 'hasParent' && need === true) {
+        @@if (context.need === true) {
         <li class="breadcrumbs__item">
           <a class="breadcrumbs__link" href="#">@@parentTitle</a>
         </li>
