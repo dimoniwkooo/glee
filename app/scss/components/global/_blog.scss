@@ -85,10 +85,21 @@
   }
 
   &__link {
-    transition: transform 0.5s ease;
+    margin-bottom: 33px;
+    overflow: hidden;
+    transition: color 0.5s ease;
 
     &:hover {
-      transform: scale(0.9);
+      color: $button;
+    }
+  }
+
+  &__author-link {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.5s ease;
+
+    &:hover {
+      border-color: $default;
     }
   }
 
@@ -106,14 +117,23 @@
     border-radius: 15px;
     color: $main-light;
     background-color: rgb(163, 187, 200);
+    transition: color 0.5s ease;
     @extend %poppins-700;
+
+    &:hover {
+      color: $main;
+    }
   }
 
   &__img {
     width: 370px;
     height: 250px;
-    margin-bottom: 33px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__posted {
@@ -145,15 +165,14 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      
     }
   }
 
   &__date::before {
-    background-image: url('../../images/icons/calendar.svg');
+    background-image: url('../images/icons/calendar.svg');
   }
 
   &__author::before {
-    background-image: url('../../images/icons/author.svg');
+    background-image: url('../images/icons/author-dark.svg');
   }
 }

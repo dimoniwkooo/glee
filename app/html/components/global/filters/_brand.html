@@ -3,55 +3,38 @@
 
   <form class="filters__form filters__form--brand" action="#">
     <ul class="filters__items">
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox" checked>
-          <div class="filters__checkbox filters__checkbox--up">
-            <span>Rfl</span>
-            <span class="filters__count">(10)</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox">
-            <span>Brothers</span>
-            <span class="filters__count">(21)</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox">
-            <span>Regal</span>
-            <span class="filters__count">(3)</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox">
-            <span>Nadia</span>
-            <span class="filters__count">(14)</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox">
-            <span>Otobi</span>
-            <span class="filters__count">(6)</span>
-          </div>
-        </label>
-      </li>
+      @@loop('_item.html',[
+      {
+      "class": "filters__checkbox filters__checkbox--up",
+      "text": "Rfl",
+      "needCount": true,
+      "count": "(10)",
+      "checked": "checked"
+      },
+      {
+      "class": "filters__checkbox",
+      "text": "Brothers",
+      "needCount": true,
+      "count": "(21)"
+      },
+      {
+      "class": "filters__checkbox",
+      "text": "Regal",
+      "needCount": true,
+      "count": "(3)"
+      },
+      {
+      "class": "filters__checkbox",
+      "text": "Nadia",
+      "needCount": true,
+      "count": "(14)"
+      },
+      {
+      "class": "filters__checkbox",
+      "text": "Otobi",
+      "needCount": true,
+      "count": "(6)"
+      } ])
     </ul>
   </form>
 </div>

@@ -1,6 +1,7 @@
 .jq-number {
   position: relative;
   padding: 0;
+  margin-right: 11px;
 
   @include for-desktop-up {
     margin-bottom: 20px;
@@ -34,34 +35,35 @@
     text-shadow: none;
     cursor: pointer;
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 23px;
-      left: 20px;
-      background-color: $title;
-      width: 10px;
-      height: 2px;
-    }
-  }
-
-  &__spin.minus {
-    border-right: 1px solid $button;
-    left: 0;
-  }
-
-  &__spin.plus {
-    border-left: 1px solid $button;
-    right: 0;
-
+    &::after,
     &::before {
       content: '';
       position: absolute;
-      top: 19px;
-      left: 24px;
       background-color: $title;
-      width: 2px;
-      height: 10px;
+    }
+
+    &::after {
+      top: 23px;
+      left: 20px;
+      width: 10px;
+      height: 2px;
+    }
+
+    &.minus {
+      border-right: 1px solid $button;
+      left: 0;
+    }
+
+    &.plus {
+      border-left: 1px solid $button;
+      right: 0;
+
+      &::before {
+        top: 19px;
+        left: 24px;
+        width: 2px;
+        height: 10px;
+      }
     }
   }
 }

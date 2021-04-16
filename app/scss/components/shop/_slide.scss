@@ -7,18 +7,26 @@
     margin-right: 25px;
   }
 
-  @include for-tablet-portrait-up {
-    flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: column-reverse;
     margin-right: 0;
     margin: 0 auto;
 
     .slick-slide {
       margin: 0 15px;
       outline: transparent;
+
+      @include for-phone-only {
+        margin: 0 5px;
+      }
     }
 
     .slick-list {
       margin: 0 -15px;
+
+      @include for-phone-only {
+        margin: 0 -5px;
+      }
     }
   }
 
@@ -42,7 +50,7 @@
   .slick-list .slick-track {
     height: 530px;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       height: 180px;
     }
   }
@@ -51,7 +59,7 @@
     width: 138px;
     margin-right: 25px;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       margin-right: 0;
       width: 100%;
     }
@@ -60,7 +68,7 @@
   &__image-small {
     height: 160px;
     width: 138px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid $main-light-alt;
 
     img {
       height: 160px;
@@ -71,10 +79,11 @@
 
   &__big {
     width: 387px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid $main-light-alt;
 
     img {
       position: absolute;
+      padding: 10px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -83,11 +92,11 @@
       object-fit: cover;
     }
 
-
-    @include for-tablet-portrait-up{
-      margin: 0 auto;
+    @include for-tablet-landscape-up {
+      margin: 0 auto 20px;
       width: 280px;
-      img{
+
+      img {
         height: 300px;
         object-fit: contain;
       }
@@ -96,6 +105,5 @@
         height: 330px;
       }
     }
-
   }
 }

@@ -3,7 +3,7 @@
   <div class="container">
     <div class=@@class>
       <address class="footer__item footer__item--contact">
-        <a class="footer__logo" href="#">
+        <a class="footer__logo" href="index.html">
           <img class="footer__logo-img" src="images/global/logo.png" alt="Site logo">
         </a>
 
@@ -12,7 +12,7 @@
             <span class="footer__address-name">Address: </span>
             <a class="footer__address-link"
               href="https://www.google.ru/maps/search/4772+Wines+Lane+Houston,+TX+77032/@29.9546474,-95.3725089,13z/data=!3m1!4b1"
-              target="_blank">
+              rel="noopener" target="_blank">
               4772 Wines Lane
               Houston, TX 77032
             </a>
@@ -34,21 +34,38 @@
         <h3 class="footer__title">services</h3>
 
         <ul class="footer__lists">
-          <li class="footer__list">
-            <a class="footer__link" href="#">About us</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#"> Return Policy</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Our Blog</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#"> Contact Us</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Terms & Condition</a>
-          </li>
+          @@loop('_li.html',[
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"about.html",
+          "text":"About us"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"#",
+          "text":"Return Policy"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"posts.html",
+          "text":"Our Blog"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"contact.html",
+          "text":"Contact Us"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"terms.html",
+          "text":"Terms & Condition"
+          }
+          ])
         </ul>
       </div>
 
@@ -56,18 +73,32 @@
         <h3 class="footer__title">account</h3>
 
         <ul class="footer__lists">
-          <li class="footer__list">
-            <a class="footer__link" href="#">Your Account</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Checkout</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Login</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Register</a>
-          </li>
+          @@loop('_li.html',[
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"#",
+          "text":"Your Account"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"#",
+          "text":"Checkout"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"login.html",
+          "text":"Login"
+          },
+          {
+          "class": "footer__list",
+          "class-link":"footer__link",
+          "href":"#",
+          "text":"Register"
+          }
+          ])
         </ul>
       </div>
       <div class="footer__item">
@@ -80,7 +111,7 @@
 
         <form class="form" action="#">
           <label>
-            <input class="form__input" placeholder="Email address" type="email" id="input-email" required>
+            <input class="form__input" placeholder="Email address" type="email" required>
           </label>
           <button class="form__btn" type="submit">Subscribe</button>
         </form>
@@ -92,23 +123,34 @@
         ©2020 CopyRight Example. All rights reserved.
       </p>
 
-      <nav class="footer__menu">
+      <nav class="footer__menu menu">
         <ul class="menu__lists">
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">Home</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">About</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">Blog</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">Contact</a>
-          </li>
+          @@loop('_li.html',[
+          {
+          "class": "menu__list",
+          "class-link":"menu__list-link",
+          "href":"index.html",
+          "text":"Home"
+          },
+          {
+          "class": "menu__list",
+          "class-link":"menu__list-link",
+          "href":"about.html",
+          "text":"About"
+          },
+          {
+          "class": "menu__list",
+          "class-link":"menu__list-link",
+          "href":"posts.html",
+          "text":"Blog"
+          },
+          {
+          "class": "menu__list",
+          "class-link":"menu__list-link",
+          "href":"contact.html",
+          "text":"Contact"
+          }
+          ])
         </ul>
       </nav>
     </div>

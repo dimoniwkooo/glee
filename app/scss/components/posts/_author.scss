@@ -51,6 +51,17 @@
 
   &__tags {
     margin-bottom: 6px;
+    display: flex;
+  }
+
+  &__lists {
+    display: flex;
+  }
+
+  &__list {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 
   &__tag,

@@ -13,7 +13,7 @@
 
   &__input,
   &__textarea {
-    border: 1px solid #e5e5e5;
+    border: 2px solid #e5e5e5;
     transition: border-color 0.5s ease;
 
     &::placeholder {
@@ -40,19 +40,9 @@
     resize: none;
   }
 
-  &__box-name,
-  &__box-mail {
-    max-width: 400px;
-    width: 100%;
-
-    @include for-tablet-portrait-up {
-      max-width: 100%;
-    }
-  }
-
-  &__box-name,
-  &__box-mail,
-  &__box-comment {
+  &__box,
+  &__box,
+  &__box {
     position: relative;
 
     &::after {
@@ -60,31 +50,40 @@
       position: absolute;
       right: 20px;
       top: 50%;
+      width: 18px;
       transform: translateY(-50%);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
-  }
 
-  &__box-name::after {
-    height: 14px;
-    width: 14px;
-    background-image: url('../../images/posts/icons/user.svg');
-  }
+    &--name,
+    &--mail {
+      max-width: 400px;
+      width: 100%;
 
-  &__box-mail::after {
-    height: 13px;
-    width: 18px;
-    background-image: url('../../images/posts/icons/mail.svg');
-  }
+      @include for-tablet-portrait-up {
+        max-width: 100%;
+      }
+    }
 
-  &__box-comment::after {
-    top: 18px;
-    transform: none;
-    height: 15px;
-    width: 18px;
-    background-image: url('../../images/posts/icons/comment.svg');
+    &--name::after {
+      height: 14px;
+      width: 14px;
+      background-image: url('../images/posts/icons/user.svg');
+    }
+
+    &--mail::after {
+      height: 13px;
+      background-image: url('../images/posts/icons/mail.svg');
+    }
+
+    &--comment::after {
+      top: 18px;
+      transform: none;
+      height: 15px;
+      background-image: url('../images/posts/icons/comment.svg');
+    }
   }
 
   &__btn {

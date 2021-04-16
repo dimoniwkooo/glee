@@ -210,6 +210,7 @@
 .form {
   position: relative;
   display: flex;
+  align-items: center;
 
   @include for-phone-only {
     justify-content: center;
@@ -221,6 +222,12 @@
     width: 100%;
     background-color: $main;
     border: transparent;
+    outline: 1px solid transparent;
+    transition: outline-color 0.5s ease;
+
+    &:focus {
+      outline-color: $button;
+    }
 
     &::placeholder {
       padding: 0 2px;
@@ -236,7 +243,7 @@
   }
 
   &__btn {
-    padding: 8px 19px;
+    padding: 9px 19px 8px;
     line-height: 1.5;
     background-color: $button;
     color: $main-light;

@@ -11,7 +11,6 @@
     text-align: center;
     color: inherit;
     font-size: 36px;
-    margin-bottom: -15px; //чтобы с перфектом сходилось из-за высоты строки
 
     @include for-tablet-portrait-up {
       font-size: 28px;
@@ -40,7 +39,13 @@
     background-color: #f8f8f8;
 
     @include for-tablet-landscape-up {
-      max-width: 600px;
+      &:nth-child(2n) {
+        margin-right: auto;
+      }
+
+      &:nth-child(2n + 1) {
+        margin-left: auto;
+      }
     }
   }
 
@@ -59,7 +64,7 @@
   }
 
   &__link {
-    @include line-clamp( $lines-to-show: 2);
+    @include line-clamp($lines-to-show: 2);
     color: inherit;
   }
 
@@ -99,7 +104,7 @@
   background-size: cover;
   background-position: center;
 
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     min-height: 301px;
   }
 

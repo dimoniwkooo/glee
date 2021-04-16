@@ -27,7 +27,7 @@
     }
 
     @include for-tablet-landscape-up {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 300px);
       margin-bottom: 50px;
     }
 
@@ -84,6 +84,12 @@
       @include for-tablet-landscape-up {
         margin-bottom: 25px;
         min-height: 390px;
+
+        &:nth-child(2) {
+          .product-card {
+            flex-direction: row-reverse;
+          }
+        }
       }
 
       @include for-tablet-portrait-up {

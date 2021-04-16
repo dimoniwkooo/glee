@@ -1,19 +1,30 @@
 <div class=@@class>
   <ul class="pagination__items">
-    <li class="pagination__item ">
-      <a class="pagination__link pagination__link--active" href="#">1</a>
-    </li>
-
-    <li class="pagination__item">
-      <a class="pagination__link" href="#">2</a>
-    </li>
-
-    <li class="pagination__item">
-      <a class="pagination__link" href="#">3</a>
-    </li>
-
-    <li class="pagination__item">
-      <a class="pagination__link" href="#">Next</a>
-    </li>
+    @@loop('_li.html',[
+    {
+    "class": "pagination__item",
+    "class-link":"pagination__link pagination__link--active",
+    "href":"#",
+    "text":"1"
+    },
+    {
+    "class": "pagination__item",
+    "class-link":"pagination__link",
+    "href":"#",
+    "text":"2"
+    },
+    {
+    "class": "pagination__item",
+    "class-link":"pagination__link",
+    "href":"#",
+    "text":"3"
+    },
+    {
+    "class": "pagination__item",
+    "class-link":"pagination__link",
+    "href":"#",
+    "text":"Next"
+    }
+    ])
   </ul>
 </div>

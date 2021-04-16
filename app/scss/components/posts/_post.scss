@@ -13,16 +13,6 @@
     object-fit: cover;
   }
 
-  &__img-left {
-    float: left;
-    margin-right: 30px;
-  }
-
-  &__img-right {
-    float: left;
-    margin-left: 30px;
-  }
-
   &__text {
     margin-bottom: 60px;
 
@@ -38,6 +28,7 @@
 
     h2 {
       font-size: 36px;
+      line-height: 1.4;
       color: $default-dark-alt;
       @extend %rubik-400;
 
@@ -81,8 +72,4 @@
       }
     }
   }
-}
-
-p.post__p {
-  margin-bottom: 42px;
 }

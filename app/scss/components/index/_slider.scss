@@ -143,7 +143,7 @@
   &__image {
     position: relative;
     padding: 175px 0 195px;
-    max-height: 634px;
+    height: 634px;
     max-width: 640px;
     width: 100%;
 
@@ -153,6 +153,7 @@
     }
 
     @include for-tablet-landscape-up {
+      height: 234px;
       padding: 25px 0;
       max-width: 400px;
       margin: 0 auto;
@@ -179,6 +180,12 @@
         display: none;
       }
     }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 
   .slick-dots {

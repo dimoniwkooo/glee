@@ -69,7 +69,6 @@
     line-height: 1;
     color: $title-alt;
     @extend %dmsans-700;
-    @include line-clamp($lines-to-show: 1);
 
     @include for-phone-only {
       font-size: 20px;
@@ -153,19 +152,19 @@
     &--projects::before {
       width: 36px;
       height: 37px;
-      background-image: url('../../images/about/projects.svg');
+      background-image: url('../images/about/projects.svg');
     }
 
     &--revenue::before {
       width: 43px;
       height: 39px;
-      background-image: url('../../images/about/revenue.svg');
+      background-image: url('../images/about/revenue.svg');
     }
 
     &--awards::before {
       width: 42px;
       height: 40px;
-      background-image: url('../../images/about/awards.svg');
+      background-image: url('../images/about/awards.svg');
     }
   }
 }

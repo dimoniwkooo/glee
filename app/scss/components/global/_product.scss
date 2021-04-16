@@ -34,6 +34,10 @@
           max-width: 300px;
           margin-right: 20px;
         }
+
+        @include for-tablet-portrait-up {
+          margin: 0 auto;
+        }
       }
 
       &__img {
@@ -110,11 +114,11 @@
         position: relative;
         width: 50px;
         height: 50px;
-        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.15);
       }
 
       &__shop {
-        margin-right: 11px;
+        margin-right: 20px;
       }
 
       &__shop,

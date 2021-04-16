@@ -43,7 +43,15 @@
     background-color: $button;
     color: #fffefe;
     margin-bottom: 25px;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
     @extend %rubik-500;
+
+    &:hover {
+      background-color: #fffefe;
+      color: $button;
+      border-color: $button;
+    }
   }
 
   &__setting {
@@ -63,7 +71,7 @@
     position: absolute;
 
     &:checked + .login__checkbox {
-      background-image: url('../../images/icons/check.png');
+      background-image: url('../images/icons/check.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -71,7 +79,7 @@
   }
 
   &__checkbox {
-    margin-top: 10px;
+    margin-top: 8px;
     position: absolute;
     width: 14px;
     height: 14px;
@@ -80,30 +88,37 @@
   }
 
   &__remember {
-    margin-left: 25px;
+    padding-left: 25px;
   }
 
   &__link {
     font-size: 14px;
     color: $title;
     display: inline-block;
-    transition: color 0.5s ease, font-weight 0.5s ease;
+    border-bottom: 1px solid transparent;
+    transition: color 0.5s ease, border-color 0.5s ease;
 
     &--problem {
       margin: 0 auto 21px;
+
+      &:hover {
+        color: $default;
+        border-color: $default;
+      }
     }
 
-    &:hover {
-      color: $default;
+    &--create {
+      text-align: center;
+      padding: 11px 10px;
+      border: 2px solid $button;
+      font-size: 18px;
+      color: $title-alt;
       @extend %rubik-500;
-    }
-  }
+      transition: background-color 0.5s ease;
 
-  &__create-btn {
-    padding: 11px 10px;
-    border: 2px solid $button;
-    font-size: 18px;
-    color: $title-alt;
-    @extend %rubik-500;
+      &:hover {
+        background-color: $button;
+      }
+    }
   }
 }

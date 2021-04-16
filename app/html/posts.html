@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
 @@include('components/global/_head.html',
 {
 "name": "Blog"
 })
 
-<body class="over">
+<body>
   @@include('components/global/_header.html')
 
   <main class="main">
@@ -26,14 +23,20 @@
             </ul>
           </div>
 
-          <div class="posts__filters filters">
+          <button class="filter-btn" type="button">
+            <span class="filter-btn__bar filter-btn__bar--top"></span>
+            <span class="filter-btn__bar filter-btn__bar--middle"></span>
+            <span class="filter-btn__bar filter-btn__bar--bottom"></span>
+            <span class="sr-only">Open menu filters</span>
+          </button>
+
+          <aside class="posts__filters filters">
             @@include('components/global/filters/_search.html')
 
             @@include('components/global/filters/_category.html',
             {
             "class": '"filters__form filters__form--posts"'
             })
-
 
             <div class="posts__recent">
               <h3 class="filters__title">Recent posts</h3>
@@ -42,7 +45,7 @@
                 @@loop('components/global/_recent.html','components/json/posts/recent.json')
               </ul>
             </div>
-          </div>
+          </aside>
         </div>
 
         @@include('components/global/_pagination.html',
@@ -62,7 +65,6 @@
   {
   "class": '"footer__top footer__top--about"'
   })
-
 
   <script src="js/main.min.js"></script>
 </body>

@@ -22,6 +22,7 @@
 
   &__item {
     position: relative;
+    max-width: 280px;
     padding: 96px 40px 10px;
     display: flex;
     flex-direction: column;
@@ -46,7 +47,7 @@
       width: 100%;
     }
 
-    @include for-phone-only{
+    @include for-phone-only {
       line-height: 1.5;
     }
 
@@ -70,25 +71,25 @@
     &--rate::before {
       width: 64px;
       height: 57px;
-      background-image: url('../../images/about/rate.svg');
+      background-image: url('../images/about/rate.svg');
     }
 
     &--delivered::before {
       width: 64px;
       height: 40px;
-      background-image: url('../../images/about/delivered.svg');
+      background-image: url('../images/about/delivered.svg');
     }
 
     &--working::before {
       width: 67px;
       height: 64px;
-      background-image: url('../../images/about/working.svg');
+      background-image: url('../images/about/working.svg');
     }
 
     &--brands::before {
       width: 48px;
       height: 64px;
-      background-image: url('../../images/about/brands.svg');
+      background-image: url('../images/about/brands.svg');
     }
 
     &::after {

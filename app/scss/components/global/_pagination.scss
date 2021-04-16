@@ -9,7 +9,7 @@
   &__items {
     display: flex;
 
-    @include for-tablet-portrait-up{
+    @include for-tablet-portrait-up {
       flex-wrap: wrap;
       row-gap: 20px;
     }

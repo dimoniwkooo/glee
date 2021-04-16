@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container container--lg">
     <nav class="menu">
-      <a class="logo" href="#">
+      <a class="logo" href="index.html">
         <img class="logo__img" src="images/global/logo.png" alt="Site logo">
       </a>
 
@@ -9,33 +9,47 @@
         <span class="burger__bar burger__bar--top"></span>
         <span class="burger__bar burger__bar--middle"></span>
         <span class="burger__bar burger__bar--bottom"></span>
-        <span class="sr-only">Открыть меню</span>
+        <span class="sr-only">Open menu list</span>
       </button>
 
       <ul class="menu__items">
-        <li class="menu__item">
-          <a class="menu__link" href="#">Home +</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">About</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Services</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Pages + </a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">News</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Contact</a>
-        </li>
+        @@loop('_li.html',[
+        {
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"index.html",
+        "text":"Home +"
+        },
+        {
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"about.html",
+        "text":"About"
+        },
+        {
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"#",
+        "text":"Services"
+        }
+        ,{
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"#",
+        "text":"Pages +"
+        }
+        ,{
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"posts.html",
+        "text":"News"
+        },
+        {
+        "class": "menu__item",
+        "class-link":"menu__link",
+        "href":"contact.html",
+        "text":"Contact"
+        } ])
       </ul>
 
       <div class="user-nav">

@@ -87,8 +87,8 @@
     display: flex;
 
     @include for-desktop-up {
-      display: none;
       position: absolute;
+      display: block;
       left: 0;
       right: 0;
       top: 100px;
@@ -96,14 +96,13 @@
       min-height: calc(100vh - 100px);
       text-align: center;
       background-color: $main-light;
-      display: block;
       transform: translateX(-200%);
       transition: transform 0.5s ease;
-      z-index: 100;
+      z-index: 1000;
 
       @include for-tablet-portrait-up {
-        top: 160px;
-        min-height: calc(100vh - 160px);
+        top: 80px;
+        min-height: calc(100vh - 80px);
       }
     }
 
@@ -154,7 +153,7 @@
   align-items: center;
 
   @include for-tablet-portrait-up {
-    margin-left: auto;
+    width: 100%;
   }
 
   &__item {
@@ -172,6 +171,15 @@
 
     &:nth-child(2) {
       margin-right: 0;
+
+      @include for-tablet-portrait-up {
+        margin-left: auto;
+      }
+    }
+    &:nth-child(3) {
+      @include for-tablet-portrait-up {
+        margin-right: auto;
+      }
     }
   }
 

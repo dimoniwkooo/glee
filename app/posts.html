@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body class="over">
+<body>
   <header class="header">
   <div class="container container--lg">
     <nav class="menu">
-      <a class="logo" href="#">
+      <a class="logo" href="index.html">
         <img class="logo__img" src="images/global/logo.png" alt="Site logo">
       </a>
 
@@ -21,33 +21,23 @@
         <span class="burger__bar burger__bar--top"></span>
         <span class="burger__bar burger__bar--middle"></span>
         <span class="burger__bar burger__bar--bottom"></span>
-        <span class="sr-only">Открыть меню</span>
+        <span class="sr-only">Open menu list</span>
       </button>
 
       <ul class="menu__items">
         <li class="menu__item">
-          <a class="menu__link" href="#">Home +</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">About</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Services</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Pages + </a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">News</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__link" href="#">Contact</a>
-        </li>
+  <a class="menu__link" href="index.html">Home +</a>
+</li><li class="menu__item">
+  <a class="menu__link" href="about.html">About</a>
+</li><li class="menu__item">
+  <a class="menu__link" href="#">Services</a>
+</li><li class="menu__item">
+  <a class="menu__link" href="#">Pages +</a>
+</li><li class="menu__item">
+  <a class="menu__link" href="posts.html">News</a>
+</li><li class="menu__item">
+  <a class="menu__link" href="contact.html">Contact</a>
+</li>
       </ul>
 
       <div class="user-nav">
@@ -101,8 +91,8 @@
     <div class="breadcrumbs">
       <ul class="breadcrumbs__items">
         <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">Home</a>
-        </li>
+  <a class="breadcrumbs__link" href="index.html">Home</a>
+</li>
 
         
 
@@ -122,7 +112,9 @@
             <ul class="posts__items">
               <li class="posts__item">
   <div class="posts__image">
-    <img class="posts__img" src=images/posts/1.jpg alt="bed against the background of the window">
+    <a class="posts__img-link" href="#">
+      <img class="posts__img" src=images/posts/1.jpg alt="bed against the background of the window">
+    </a>
     <div class="posts__posted">
       <time class="posts__date">28 JANUARY, 2020</time>
       <span class="posts__author">By Admin</span>
@@ -138,7 +130,7 @@
       amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     </p>
   </div>
-  <a class="posts__link" href="#">
+  <a class="posts__link" href="post.html">
     View More
     <svg class="posts__icon">
       <use xlink:href="images/icons/sprite.svg#slider-arrow"></use>
@@ -146,7 +138,9 @@
   </a>
 </li><li class="posts__item">
   <div class="posts__image">
-    <img class="posts__img" src=images/posts/2.jpg alt="sofa and table with two chair">
+    <a class="posts__img-link" href="#">
+      <img class="posts__img" src=images/posts/2.jpg alt="sofa and table with two chair">
+    </a>
     <div class="posts__posted">
       <time class="posts__date">28 JANUARY, 2020</time>
       <span class="posts__author">By Admin</span>
@@ -162,7 +156,7 @@
       amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     </p>
   </div>
-  <a class="posts__link" href="#">
+  <a class="posts__link" href="post.html">
     View More
     <svg class="posts__icon">
       <use xlink:href="images/icons/sprite.svg#slider-arrow"></use>
@@ -170,7 +164,9 @@
   </a>
 </li><li class="posts__item">
   <div class="posts__image">
-    <img class="posts__img" src=images/posts/3.jpg alt="sofa against the background of the window">
+    <a class="posts__img-link" href="#">
+      <img class="posts__img" src=images/posts/3.jpg alt="sofa against the background of the window">
+    </a>
     <div class="posts__posted">
       <time class="posts__date">28 JANUARY, 2020</time>
       <span class="posts__author">By Admin</span>
@@ -186,7 +182,7 @@
       amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     </p>
   </div>
-  <a class="posts__link" href="#">
+  <a class="posts__link" href="post.html">
     View More
     <svg class="posts__icon">
       <use xlink:href="images/icons/sprite.svg#slider-arrow"></use>
@@ -194,7 +190,9 @@
   </a>
 </li><li class="posts__item">
   <div class="posts__image">
-    <img class="posts__img" src=images/posts/4.jpg alt="sofa and table against the background table">
+    <a class="posts__img-link" href="#">
+      <img class="posts__img" src=images/posts/4.jpg alt="sofa and table against the background table">
+    </a>
     <div class="posts__posted">
       <time class="posts__date">28 JANUARY, 2020</time>
       <span class="posts__author">By Admin</span>
@@ -210,7 +208,7 @@
       amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     </p>
   </div>
-  <a class="posts__link" href="#">
+  <a class="posts__link" href="post.html">
     View More
     <svg class="posts__icon">
       <use xlink:href="images/icons/sprite.svg#slider-arrow"></use>
@@ -220,7 +218,14 @@
             </ul>
           </div>
 
-          <div class="posts__filters filters">
+          <button class="filter-btn" type="button">
+            <span class="filter-btn__bar filter-btn__bar--top"></span>
+            <span class="filter-btn__bar filter-btn__bar--middle"></span>
+            <span class="filter-btn__bar filter-btn__bar--bottom"></span>
+            <span class="sr-only">Open menu filters</span>
+          </button>
+
+          <aside class="posts__filters filters">
             <form class="filters__form" action="#">
   <div class="filters__form-inner">
     <input class="filters__search" type="text">
@@ -238,60 +243,56 @@
   <form class="filters__form filters__form--posts" action="#">
     <ul class="filters__items">
       <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox" checked>
-          <div class="filters__checkbox filters__checkbox--cat">
-            <span>Chair</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox filters__checkbox--cat">
-            <span>Table</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox filters__checkbox--cat">
-            <span>Lamp</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox filters__checkbox--cat">
-            <span>Watch</span>
-          </div>
-        </label>
-      </li>
-
-      <li class="filters__item">
-        <label class="filters__label">
-          <input class="filters__input" type="checkbox">
-          <div class="filters__checkbox filters__checkbox--cat">
-            <span>Clock</span>
-          </div>
-        </label>
-      </li>
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" checked>
+    <div class="filters__checkbox filters__checkbox--cat">
+      <span>Chair</span>
+      
+    </div>
+  </label>
+</li><li class="filters__item">
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" @@checked>
+    <div class="filters__checkbox filters__checkbox--cat">
+      <span>Table</span>
+      
+    </div>
+  </label>
+</li><li class="filters__item">
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" @@checked>
+    <div class="filters__checkbox filters__checkbox--cat">
+      <span>Lamp</span>
+      
+    </div>
+  </label>
+</li><li class="filters__item">
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" @@checked>
+    <div class="filters__checkbox filters__checkbox--cat">
+      <span>Watch</span>
+      
+    </div>
+  </label>
+</li><li class="filters__item">
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" @@checked>
+    <div class="filters__checkbox filters__checkbox--cat">
+      <span>Clock</span>
+      
+    </div>
+  </label>
+</li>
     </ul>
   </form>
 </div>
-
 
             <div class="posts__recent">
               <h3 class="filters__title">Recent posts</h3>
 
               <ul class="recent">
                 <li class="recent__item">
-  <a class="recent__link" href="#">
+  <a class="recent__link" href="shop.html">
     <div class="recent__image">
       <img class="recent__img" src="images/posts/recent/1.jpg" alt="beige kitchen">
     </div>
@@ -305,7 +306,7 @@
     </div>
   </a>
 </li><li class="recent__item">
-  <a class="recent__link" href="#">
+  <a class="recent__link" href="shop.html">
     <div class="recent__image">
       <img class="recent__img" src="images/posts/recent/2.jpg" alt="white kitchen">
     </div>
@@ -319,7 +320,7 @@
     </div>
   </a>
 </li><li class="recent__item">
-  <a class="recent__link" href="#">
+  <a class="recent__link" href="shop.html">
     <div class="recent__image">
       <img class="recent__img" src="images/posts/recent/3.jpg" alt="white kitchen">
     </div>
@@ -333,7 +334,7 @@
     </div>
   </a>
 </li><li class="recent__item">
-  <a class="recent__link" href="#">
+  <a class="recent__link" href="shop.html">
     <div class="recent__image">
       <img class="recent__img" src="images/posts/recent/4.jpg" alt="white hallway">
     </div>
@@ -349,26 +350,20 @@
 </li>
               </ul>
             </div>
-          </div>
+          </aside>
         </div>
 
         <div class="pagination pagination--posts">
   <ul class="pagination__items">
-    <li class="pagination__item ">
-      <a class="pagination__link pagination__link--active" href="#">1</a>
-    </li>
-
     <li class="pagination__item">
-      <a class="pagination__link" href="#">2</a>
-    </li>
-
-    <li class="pagination__item">
-      <a class="pagination__link" href="#">3</a>
-    </li>
-
-    <li class="pagination__item">
-      <a class="pagination__link" href="#">Next</a>
-    </li>
+  <a class="pagination__link pagination__link--active" href="#">1</a>
+</li><li class="pagination__item">
+  <a class="pagination__link" href="#">2</a>
+</li><li class="pagination__item">
+  <a class="pagination__link" href="#">3</a>
+</li><li class="pagination__item">
+  <a class="pagination__link" href="#">Next</a>
+</li>
   </ul>
 </div>
       </div>
@@ -413,7 +408,7 @@
   <div class="container">
     <div class="footer__top footer__top--about">
       <address class="footer__item footer__item--contact">
-        <a class="footer__logo" href="#">
+        <a class="footer__logo" href="index.html">
           <img class="footer__logo-img" src="images/global/logo.png" alt="Site logo">
         </a>
 
@@ -422,7 +417,7 @@
             <span class="footer__address-name">Address: </span>
             <a class="footer__address-link"
               href="https://www.google.ru/maps/search/4772+Wines+Lane+Houston,+TX+77032/@29.9546474,-95.3725089,13z/data=!3m1!4b1"
-              target="_blank">
+              rel="noopener" target="_blank">
               4772 Wines Lane
               Houston, TX 77032
             </a>
@@ -445,20 +440,16 @@
 
         <ul class="footer__lists">
           <li class="footer__list">
-            <a class="footer__link" href="#">About us</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#"> Return Policy</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Our Blog</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#"> Contact Us</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Terms & Condition</a>
-          </li>
+  <a class="footer__link" href="about.html">About us</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="#">Return Policy</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="posts.html">Our Blog</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="contact.html">Contact Us</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="terms.html">Terms & Condition</a>
+</li>
         </ul>
       </div>
 
@@ -467,17 +458,14 @@
 
         <ul class="footer__lists">
           <li class="footer__list">
-            <a class="footer__link" href="#">Your Account</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Checkout</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Login</a>
-          </li>
-          <li class="footer__list">
-            <a class="footer__link" href="#">Register</a>
-          </li>
+  <a class="footer__link" href="#">Your Account</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="#">Checkout</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="login.html">Login</a>
+</li><li class="footer__list">
+  <a class="footer__link" href="#">Register</a>
+</li>
         </ul>
       </div>
       <div class="footer__item">
@@ -490,7 +478,7 @@
 
         <form class="form" action="#">
           <label>
-            <input class="form__input" placeholder="Email address" type="email" id="input-email" required>
+            <input class="form__input" placeholder="Email address" type="email" required>
           </label>
           <button class="form__btn" type="submit">Subscribe</button>
         </form>
@@ -502,29 +490,22 @@
         ©2020 CopyRight Example. All rights reserved.
       </p>
 
-      <nav class="footer__menu">
+      <nav class="footer__menu menu">
         <ul class="menu__lists">
           <li class="menu__list">
-            <a class="menu__list-link" href="#">Home</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">About</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">Blog</a>
-          </li>
-
-          <li class="menu__list">
-            <a class="menu__list-link" href="#">Contact</a>
-          </li>
+  <a class="menu__list-link" href="index.html">Home</a>
+</li><li class="menu__list">
+  <a class="menu__list-link" href="about.html">About</a>
+</li><li class="menu__list">
+  <a class="menu__list-link" href="posts.html">Blog</a>
+</li><li class="menu__list">
+  <a class="menu__list-link" href="contact.html">Contact</a>
+</li>
         </ul>
       </nav>
     </div>
   </div>
 </footer>
-
 
   <script src="js/main.min.js"></script>
 </body>

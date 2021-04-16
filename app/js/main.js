@@ -2,10 +2,15 @@ $(function () {
   function toggleSidebar() {
     $('.burger').toggleClass('active')
     $('.menu__items').toggleClass('active')
-    $('.over').toggleClass('active')
+    $('body').toggleClass('active')
   }
-
   $('.burger').on('click tap', toggleSidebar)
+
+  function filterMenu() {
+    $('.filter-btn').toggleClass('active')
+    $('.posts__filters').toggleClass('active')
+  }
+  $('.filter-btn').on('click tap', filterMenu)
 
   $('.shop__tab').on('click', function (e) {
     e.preventDefault()
@@ -47,29 +52,23 @@ $(function () {
     },
   })
 
+  const options = {
+    starWidth: '18px',
+    ratedFill: '#ffcc00',
+    normalFill: '#d6d6d6',
+    spacing: '13px',
+    readOnly: true,
+  }
+
   $('.recent__rate').rateYo({
+    ...options,
     starWidth: '12px',
-    ratedFill: '#ffcc00',
-    normalFill: '#d6d6d6',
     spacing: '6px',
-    readOnly: true,
   })
 
-  $('.shop__rate').rateYo({
-    starWidth: '18px',
-    ratedFill: '#ffcc00',
-    normalFill: '#d6d6d6',
-    spacing: '13px',
-    readOnly: true,
-  })
+  $('.shop__rate').rateYo(options)
 
-  $('.product__rate').rateYo({
-    starWidth: '18px',
-    ratedFill: '#ffcc00',
-    normalFill: '#d6d6d6',
-    spacing: '13px',
-    readOnly: true,
-  })
+  $('.product__rate').rateYo(options)
 
   $('.slider__items').slick({
     dots: true,
@@ -122,7 +121,7 @@ $(function () {
     draggable: false,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           vertical: false,
         },
@@ -141,10 +140,8 @@ $(function () {
     slidesToScroll: 1,
     arrows: true,
     appendArrows: '.related__button',
-    prevArrow:
-      '<button class="related__btn related__btn--prev slick-prev" type="button"></button>',
-    nextArrow:
-      '<button class="related__btn related__btn--next slick-next" type="button"></button>',
+    prevArrow: $('.related__btn--prev'),
+    nextArrow: $('.related__btn--next'),
     responsive: [
       {
         breakpoint: 1200,

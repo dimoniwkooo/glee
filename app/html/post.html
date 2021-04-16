@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 @@include('components/global/_head.html',
 {
 "name": "Blog details"
@@ -24,7 +21,7 @@
             <div class="post__image">
               <img class="posts__img" src="images/posts/1.jpg" alt="bed against the background of the window">
               <div class="posts__posted">
-                <time class="posts__date">28 JANUARY, 2020</time>
+                <time class="posts__date">28 january, 2020</time>
                 <span class="posts__author">By Admin</span>
               </div>
             </div>
@@ -53,11 +50,9 @@
                 <cite>Wiusmod tempor</cite>
               </blockquote>
 
-              <img class="post__img-left" src="images/posts/5.jpg"
-                alt="sofa and table against the background of the table">
-
+              <img src="images/posts/5.jpg" alt="sofa and table against the background of the table">
               <h3>Riusmod tempor incididunt</h3>
-              <p class="post__p">
+              <p>
                 consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
               </p>
@@ -83,8 +78,21 @@
               <div class="author__links">
                 <div class="author__tags">
                   <span class="author__tag">Tags:</span>
-                  <a class="author__tag-link" href="#">All</a>,
-                  <a class="author__tag-link" href="#">Trending</a>
+                  <ul class="author__lists">
+                    @@loop('components/global/_li.html',[
+                    {
+                    "class": "author__list",
+                    "class-link":"author__tag-link",
+                    "href":"#",
+                    "text":"All"
+                    },
+                    {
+                    "class": "author__list",
+                    "class-link":"author__tag-link",
+                    "href":"#",
+                    "text":"Trending"
+                    }])
+                  </ul>
                 </div>
 
                 <div class="author__shares">
@@ -104,8 +112,14 @@
             @@include('components/posts/_comments.html')
           </div>
 
+          <button class="filter-btn" type="button">
+            <span class="filter-btn__bar filter-btn__bar--top"></span>
+            <span class="filter-btn__bar filter-btn__bar--middle"></span>
+            <span class="filter-btn__bar filter-btn__bar--bottom"></span>
+            <span class="sr-only">Open menu filters</span>
+          </button>
 
-          <div class="posts__filters filters">
+          <aside class="posts__filters filters">
             @@include('components/global/filters/_search.html')
 
             @@include('components/global/filters/_category.html',
@@ -120,7 +134,7 @@
                 @@loop('components/global/_recent.html','components/json/posts/recent.json')
               </ul>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -135,7 +149,6 @@
   {
   "class": '"footer__top footer__top--about"'
   })
-
 
   <script src="js/main.min.js"></script>
 </body>

@@ -1,0 +1,11 @@
+<li class="filters__item">
+  <label class="filters__label">
+    <input class="filters__input" type="checkbox" @@checked>
+    <div class="@@class">
+      <span>@@text</span>
+      @@if (context.needCount === true) {
+      <span class="filters__count">@@count</span>
+      }
+    </div>
+  </label>
+</li>

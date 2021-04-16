@@ -38,14 +38,10 @@
     color: $title-alt;
     margin-bottom: 34px;
 
-    @include line-clamp($lines-to-show: 9);
-
     @include for-desktop-up {
       max-width: 100%;
       width: 100%;
       margin-bottom: 0;
-
-      @include line-clamp($lines-to-show: 9);
     }
   }
 
@@ -101,6 +97,7 @@
   &__items {
     max-width: 770px;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 100px;
